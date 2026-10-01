@@ -1,0 +1,15 @@
+.test-card { margin-top: 20rpx; padding: 28rpx 24rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }
+.prompt { font-family: Georgia,serif; font-size: 58rpx; font-weight: 800; text-align: center; }
+.phonetic { margin-top: 12rpx; color: #78857e; font-size: 23rpx; text-align: center; }
+.question-hint { margin-top: 48rpx; color: #46564d; font-size: 25rpx; font-weight: 650; }
+.options { display: flex; flex-direction: column; gap: 15rpx; margin-top: 22rpx; }
+.option { display: flex; align-items: center; gap: 18rpx; min-height: 86rpx; padding: 18rpx 20rpx; border: 2rpx solid #e2e8e4; border-radius: 20rpx; }
+.key { display: flex; align-items: center; justify-content: center; width: 48rpx; height: 48rpx; border-radius: 14rpx; background: #eff2f0; font-weight: 750; }
+.option--selected { border-color: #69ae8d; background: #f0f8f4; }
+.option--selected .key { color: #fff; background: #187653; }
+.option--correct { border-color: #4aa679; background: #edf8f2; }
+.option--wrong { border-color: #dc6a65; background: #fff0ef; }
+.feedback { margin-top: 24rpx; padding: 18rpx; border-radius: 18rpx; color: #187653; background: #e9f6ef; text-align: center; font-weight: 700; }
+.feedback--wrong { color: #b94b47; background: #fff0ef; }
+.test-finish { padding: 150rpx 20rpx 40rpx; text-align: center; }
+.finish-score { display: flex; align-items: center; justify-content: center; width: 210rpx; height: 210rpx; margin: 0 auto; border: 14rpx solid #c8e3d5; border-radius: 50%; color: #187653; background: #fff; font-size: 45rpx; font-weight: 850; }

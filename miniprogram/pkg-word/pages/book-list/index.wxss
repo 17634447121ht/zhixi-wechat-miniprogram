@@ -1,0 +1,7 @@
+.intro { padding: 12rpx 4rpx 18rpx; }
+.book-card { display: flex; align-items: center; gap: 20rpx; margin-bottom: 14rpx; padding: 22rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }
+.cover { display: flex; flex-direction: column; justify-content: space-between; width: 104rpx; height: 132rpx; flex: 0 0 auto; padding: 14rpx; border-radius: 12rpx; color: #fff; background: #277858; }
+.book-card--orange .cover { background: #c96e3d; }
+.book-card--blue .cover { background: #4d72b6; }
+.cover-code { font-size: 18rpx; font-weight: 700; }
+.cover-mark { font-family: Georgia,serif; font-size: 31rpx; font-weight: 800; }

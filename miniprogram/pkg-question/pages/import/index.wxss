@@ -1,0 +1,53 @@
+.import-page { padding-bottom: calc(48rpx + env(safe-area-inset-bottom)); }
+.intro { padding: 24rpx 4rpx 22rpx; }
+.kind-switch { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12rpx; margin-bottom: 18rpx; }
+.kind-item { padding: 18rpx 20rpx; border: 1rpx solid #e0e7e2; border-radius: 16rpx; background: #fff; }
+.kind-item--active { border-color: #8fc8ad; background: #eaf6ef; }
+.kind-label { color: #27342d; font-size: 27rpx; font-weight: 700; }
+.kind-item--active .kind-label { color: #116542; }
+.kind-note { overflow: hidden; margin-top: 5rpx; color: #89958e; font-size: 20rpx; text-overflow: ellipsis; white-space: nowrap; }
+.subject-picker { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16rpx; padding: 17rpx 20rpx; border: 1rpx solid #e0e7e2; border-radius: 16rpx; background: #fff; }
+.subject-label { color: #89958e; font-size: 20rpx; }
+.subject-value { margin-top: 3rpx; color: #27342d; font-size: 25rpx; font-weight: 680; }
+.picker-arrow { color: #187653; font-size: 21rpx; }
+.upload-card { display: flex; align-items: center; gap: 18rpx; padding: 22rpx; border: 1rpx solid #e0e7e2; border-radius: 18rpx; background: #fff; }
+.upload-copy { flex: 1; min-width: 0; }
+.format-actions { display: flex; gap: 28rpx; padding: 14rpx 4rpx 4rpx; }
+.format-help { color: #187653; font-size: 22rpx; }
+.preview-card { margin-top: 22rpx; padding: 22rpx; border: 1rpx solid #d9e4dd; border-radius: 18rpx; background: #fff; }
+.file-line { display: flex; align-items: center; gap: 16rpx; }
+.file-mark { display: flex; align-items: center; justify-content: center; width: 68rpx; height: 58rpx; border-radius: 12rpx; color: #fff; background: #277858; font-size: 18rpx; font-weight: 750; }
+.file-mark--pdf { background: #d55a48; }
+.file-name { overflow: hidden; color: #27342d; font-size: 25rpx; font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+.ready { flex: 0 0 auto; color: #187653; font-size: 21rpx; }
+.parsing-card { margin-top: 18rpx; }
+.parsing-status { display: flex; flex: 0 0 auto; align-items: center; color: #6f7c75; font-size: 21rpx; }
+.parsing-dot { width: 10rpx; height: 10rpx; margin-right: 9rpx; border-radius: 50%; background: #2a8b63; animation: parsing-pulse 1s ease-in-out infinite; }
+.preview-title { color: #1f2c25; font-size: 29rpx; font-weight: 720; }
+.preview-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22rpx; padding: 18rpx 0; border-radius: 14rpx; background: #f6f8f6; text-align: center; }
+.stat-number, .stat-text { display: block; }
+.stat-number { color: #26342d; font-size: 28rpx; font-weight: 750; }
+.stat-text { margin-top: 4rpx; color: #859089; font-size: 19rpx; }
+.pdf-result { margin-top: 14rpx; color: #718078; font-size: 20rpx; text-align: center; }
+.warning-panel { margin-top: 16rpx; padding: 15rpx 17rpx; border-radius: 13rpx; color: #7e5b28; background: #fff8e9; font-size: 20rpx; line-height: 1.55; }
+.warning-title { margin-bottom: 4rpx; color: #634319; font-weight: 700; }
+.warning-item { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.warning-more { margin-top: 3rpx; color: #9a794a; }
+.import-button { margin-top: 20rpx; }
+.list-head { display: flex; align-items: flex-end; justify-content: space-between; margin: 34rpx 4rpx 14rpx; }
+.list-loading { padding: 52rpx 0; }
+.bank-list { overflow: hidden; border: 1rpx solid #e0e7e2; border-radius: 18rpx; background: #fff; }
+.bank-row { display: flex; align-items: center; gap: 16rpx; min-height: 108rpx; margin: 0 22rpx; border-bottom: 1rpx solid #edf1ee; }
+.bank-row:last-child { border-bottom: 0; }
+.bank-mark { display: flex; align-items: center; justify-content: center; width: 52rpx; height: 52rpx; flex: 0 0 auto; border-radius: 13rpx; color: #ad5b2f; background: #fff1e8; font-size: 21rpx; font-weight: 750; }
+.bank-title { overflow: hidden; color: #26312b; font-size: 26rpx; font-weight: 680; text-overflow: ellipsis; white-space: nowrap; }
+.bank-meta { overflow: hidden; margin-top: 6rpx; color: #8a948f; font-size: 21rpx; text-overflow: ellipsis; white-space: nowrap; }
+.bank-action { flex: 0 0 auto; color: #187653; font-size: 22rpx; font-weight: 650; }
+.arrow { flex: 0 0 auto; color: #b2bbb6; font-size: 34rpx; font-weight: 300; }
+.empty-panel { padding: 42rpx 24rpx; border: 1rpx solid #e0e7e2; border-radius: 18rpx; background: #fff; text-align: center; }
+.empty-title { color: #526159; font-size: 25rpx; font-weight: 650; }
+
+@keyframes parsing-pulse {
+  0%, 100% { opacity: .35; transform: scale(.8); }
+  50% { opacity: 1; transform: scale(1); }
+}

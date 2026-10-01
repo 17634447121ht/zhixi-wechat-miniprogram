@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="search"><input class="search-input" value="{{query}}" placeholder="搜索单词或释义" confirm-type="search" bindinput="onInput" bindconfirm="search" /><button class="search-button" bind:tap="search">搜索</button></view>
+  <scroll-view scroll-x enable-flex class="level-scroll"><view class="level-row"><view class="chip {{mastery === item.value ? 'chip--active' : ''}}" wx:for="{{levels}}" wx:key="value" data-value="{{item.value}}" bind:tap="chooseLevel">{{item.label}}</view></view></scroll-view>
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{!items.length}}" icon="Aa" title="生词本还是空的" description="学习时点击星标，就能把想重点复习的词放到这里。" action-text="开始学单词" bind:action="goStudy" />
+  <block wx:else>
+    <view class="word-row" wx:for="{{items}}" wx:key="id">
+      <view class="grow"><view class="row gap-sm"><view class="word">{{item.spelling}}</view><view class="tag">{{item.masteryLabel}}</view></view><view class="phonetic">{{item.ukPhonetic}} · {{item.partOfSpeech}}</view><view class="meaning">{{item.meaning}}</view></view>
+      <button class="remove" data-id="{{item.id}}" bind:tap="remove">移除</button>
+    </view>
+    <view class="fixed-actions"><button class="button button--primary" bind:tap="review">复习生词 · {{items.length}} 个</button></view>
+  </block>
+</view>

@@ -1,0 +1,17 @@
+<view class="login-page">
+  <view class="login-main">
+    <view class="brand-mark">知</view>
+    <view class="title">知习</view>
+    <view class="subtitle">专注每一次学习</view>
+
+    <view class="login-form">
+      <view class="field-label">昵称</view>
+      <input class="nickname-input" maxlength="12" value="{{nickname}}" placeholder="输入昵称" placeholder-class="input-placeholder" bindinput="onNicknameInput" />
+      <button class="login-button {{loading ? 'login-button--loading' : ''}}" loading="{{loading}}" disabled="{{loading}}" bind:tap="login">
+        {{loading ? '正在进入…' : '开始学习'}}
+      </button>
+    </view>
+  </view>
+
+  <view class="privacy">学习记录仅保存在本机，演示版不会上传微信资料</view>
+</view>

@@ -1,0 +1,8 @@
+.intro-row { padding: 16rpx 6rpx 22rpx; }
+.select-all { padding: 12rpx 18rpx; color: #187653; font-size: 24rpx; font-weight: 700; }
+.point-list { display: flex; flex-direction: column; gap: 16rpx; }
+.point { display: flex; align-items: center; gap: 20rpx; padding: 26rpx; border: 2rpx solid #e2e9e5; border-radius: 24rpx; background: #fff; }
+.point--selected { border-color: #68ad8c; background: #f1f9f5; }
+.checkbox { display: flex; align-items: center; justify-content: center; width: 48rpx; height: 48rpx; flex: 0 0 auto; border: 2rpx solid #cbd7d0; border-radius: 14rpx; color: #fff; font-size: 24rpx; font-weight: 800; }
+.point--selected .checkbox { border-color: #187653; background: #187653; }
+.accuracy { color: #187653; font-size: 24rpx; font-weight: 750; }

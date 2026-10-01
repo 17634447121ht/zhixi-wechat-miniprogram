@@ -1,0 +1,31 @@
+<view class="page profile-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{profile && stats}}">
+    <view class="profile-head" bind:tap="editProfile">
+      <image class="profile-avatar" wx:if="{{profile.avatarUrl}}" src="{{profile.avatarUrl}}" mode="aspectFill" />
+      <view class="profile-avatar avatar-fallback" wx:else>{{profile.initial}}</view>
+      <view class="grow">
+        <view class="profile-name">{{profile.nickname}}</view>
+        <view class="profile-meta">学习 {{stats.studyDays}} 天 · 连续 {{stats.continuousStudyDays}} 天</view>
+      </view>
+      <view class="edit">编辑</view>
+      <view class="chevron">›</view>
+    </view>
+
+    <view class="stats-row">
+      <view class="stat-item"><view class="stat-value">{{stats.questionCount}}</view><view class="stat-label">做题</view></view>
+      <view class="stat-item"><view class="stat-value">{{stats.accuracy}}%</view><view class="stat-label">正确率</view></view>
+      <view class="stat-item"><view class="stat-value">{{stats.learnedWords}}</view><view class="stat-label">单词</view></view>
+    </view>
+
+    <view class="menu-panel">
+      <view class="simple-menu-item" wx:for="{{menus}}" wx:key="title" data-url="{{item.url}}" bind:tap="openMenu">
+        <view class="simple-menu-icon">{{item.icon}}</view>
+        <view class="simple-menu-title">{{item.title}}</view>
+        <view class="chevron">›</view>
+      </view>
+    </view>
+
+    <view class="profile-foot">知习 V1.0</view>
+  </block>
+</view>

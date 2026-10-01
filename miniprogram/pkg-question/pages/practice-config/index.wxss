@@ -1,0 +1,13 @@
+.summary-card { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; padding: 22rpx; border: 1rpx solid #d8e7df; border-radius: 18rpx; background: #f4faf7; }
+.available { flex: 0 0 auto; }
+.available-number { color: #187653; font-size: 40rpx; font-weight: 800; }
+.mode-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14rpx; }
+.mode { padding: 20rpx 12rpx; border: 2rpx solid #e1e8e4; border-radius: 14rpx; background: #fff; text-align: center; }
+.mode--active { border-color: #5da982; background: #eef8f3; color: #116846; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 14rpx; }
+.count-chip { min-width: 124rpx; padding: 16rpx 18rpx; border: 2rpx solid #e1e8e4; border-radius: 12rpx; background: #fff; text-align: center; }
+.count-chip--active { color: #fff; border-color: #187653; background: #187653; font-weight: 700; }
+.count-chip--disabled { opacity: .35; }
+.difficulty-row { display: grid; grid-template-columns: repeat(5,1fr); gap: 12rpx; }
+.difficulty { display: flex; align-items: center; justify-content: center; height: 64rpx; border: 2rpx solid #e1e8e4; border-radius: 12rpx; background: #fff; }
+.difficulty--active { color: #fff; border-color: #187653; background: #187653; font-weight: 750; }

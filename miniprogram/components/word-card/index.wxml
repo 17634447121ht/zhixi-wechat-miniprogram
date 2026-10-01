@@ -1,0 +1,24 @@
+<view class="word-card" wx:if="{{word}}">
+  <view class="top-row">
+    <view class="word">{{word.spelling}}</view>
+    <view class="favorite {{word.favorite ? 'favorite--active' : ''}}" bind:tap="favorite">{{word.favorite ? '★' : '☆'}}</view>
+  </view>
+  <view class="phonetic-row">
+    <text class="phonetic">英 {{word.ukPhonetic}}</text>
+    <text class="phonetic">美 {{word.usPhonetic}}</text>
+    <button class="speak" bind:tap="speak">▶ 发音</button>
+  </view>
+
+  <view class="recall" wx:if="{{!revealed}}">
+    <view class="recall-mark">?</view>
+    <view class="recall-title">先在心里回忆它的含义</view>
+    <view class="recall-subtitle">回忆完成后再查看释义，记忆会更牢</view>
+    <button class="reveal" bind:tap="reveal">查看释义</button>
+  </view>
+
+  <view class="definition" wx:else>
+    <view class="meaning-row"><text class="pos">{{word.partOfSpeech}}</text><text class="meaning">{{word.meaning}}</text></view>
+    <view class="example">{{word.example}}</view>
+    <view class="translation">{{word.exampleTranslation}}</view>
+  </view>
+</view>

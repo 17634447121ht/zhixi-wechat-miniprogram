@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "薄弱知识点", "usingComponents": { "progress-bar": "/components/progress-bar/index", "empty-state": "/components/empty-state/index" } }

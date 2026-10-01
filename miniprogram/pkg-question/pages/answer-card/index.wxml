@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="题卡加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="summary">
+      <view><view class="summary-value">{{detail.counts.answered}}</view><view class="caption">已答</view></view>
+      <view><view class="summary-value success">{{detail.counts.correct}}</view><view class="caption">正确</view></view>
+      <view><view class="summary-value danger">{{detail.counts.wrong}}</view><view class="caption">错误</view></view>
+      <view><view class="summary-value muted-value">{{detail.counts.unanswered}}</view><view class="caption">未答</view></view>
+    </view>
+
+    <view class="legend"><view><view class="legend-dot legend-dot--correct"></view>正确</view><view><view class="legend-dot legend-dot--wrong"></view>错误</view><view><view class="legend-dot"></view>未答</view></view>
+    <view class="card-grid">
+      <view class="card-number card-number--{{item.statusClass}} {{detail.session.currentIndex === item.index ? 'card-number--current' : ''}}" wx:for="{{detail.card}}" wx:key="questionId" data-index="{{item.index}}" bind:tap="jump">{{item.number}}</view>
+    </view>
+    <view class="notice mt-lg">点击题号可直接跳转；随机练习的题序已固定。</view>
+    <view class="fixed-actions"><button class="button button--primary" bind:tap="finish">结束练习并查看报告</button></view>
+  </block>
+</view>

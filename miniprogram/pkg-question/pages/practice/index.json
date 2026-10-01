@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "刷题", "disableScroll": false, "usingComponents": { "progress-bar": "/components/progress-bar/index", "question-card": "/components/question-card/index", "empty-state": "/components/empty-state/index" } }

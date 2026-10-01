@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:else>
+    <view class="intro"><view class="title-lg">选择适合你的词书</view><view class="body mt-sm">一个单词可以属于多本词书，学习记录会自动复用。</view></view>
+    <view class="book-card book-card--{{item.accent}}" wx:for="{{books}}" wx:key="id" data-id="{{item.id}}" bind:tap="open">
+      <view class="cover"><view class="cover-code">{{item.code}}</view><view class="cover-mark">Aa</view></view>
+      <view class="grow"><view class="row--between"><view class="title-md">{{item.name}}</view><view class="tag" wx:if="{{item.current}}">当前</view></view><view class="caption mt-xs">{{item.description}}</view><view class="mt-md"><progress-bar value="{{item.progress}}" label="{{item.learned}} / {{item.total}} 已学习" detail="{{item.progress}}%" /></view></view>
+    </view>
+  </block>
+</view>

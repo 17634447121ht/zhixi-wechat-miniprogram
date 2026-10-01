@@ -1,0 +1,6 @@
+.filter-scroll { width: 100%; margin-bottom: 18rpx; white-space: nowrap; }
+.filter-row { display: flex; gap: 12rpx; padding: 2rpx 2rpx 10rpx; }
+.wrong-card { margin-bottom: 14rpx; padding: 22rpx; border: 1rpx solid #e4e9e6; border-radius: 18rpx; background: #fff; }
+.ml-tag { margin-left: 10rpx; }
+.stem { margin: 22rpx 0 16rpx; color: #28382f; font-size: 28rpx; line-height: 1.65; font-weight: 650; }
+.actions { display: flex; justify-content: flex-end; gap: 12rpx; margin-top: 22rpx; }

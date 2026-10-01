@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "科目能力", "usingComponents": { "progress-bar": "/components/progress-bar/index", "empty-state": "/components/empty-state/index" } }

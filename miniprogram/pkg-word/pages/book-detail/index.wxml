@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="词书加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{book}}">
+    <view class="book-hero book-hero--{{book.accent}}"><view class="book-code">{{book.code}}</view><view class="book-aa">Aa</view><view class="book-title">{{book.name}}</view><view class="book-desc">{{book.description}}</view></view>
+    <view class="card mt-md">
+      <view class="detail-grid"><view><view class="value">{{book.total}}</view><view class="caption">总词汇</view></view><view><view class="value">{{book.learned}}</view><view class="caption">已学习</view></view><view><view class="value">{{book.mastered}}</view><view class="caption">已掌握</view></view></view>
+      <view class="divider"></view><progress-bar value="{{book.progress}}" label="学习进度" detail="{{book.progress}}%" />
+    </view>
+    <view class="notice mt-md">切换词书不会清除已有学习记录，共有单词会继续沿用掌握状态。</view>
+    <view class="fixed-actions"><button class="button button--primary" loading="{{selecting}}" disabled="{{selecting}}" bind:tap="choose">{{book.current ? '继续使用这本词书' : '选择该词书'}}</button></view>
+  </block>
+</view>

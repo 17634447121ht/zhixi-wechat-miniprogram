@@ -1,0 +1,6 @@
+.empty { padding: 52rpx 28rpx; text-align: center; }
+.icon { color: #7fa994; font-size: 52rpx; line-height: 1; }
+.title { margin-top: 14rpx; color: #27342d; font-size: 28rpx; font-weight: 700; }
+.description { max-width: 500rpx; margin: 12rpx auto 0; color: #718078; font-size: 24rpx; line-height: 1.65; }
+.action { width: 240rpx; min-height: 70rpx; margin: 22rpx auto 0; border-radius: 14rpx; color: #fff; background: #187653; font-size: 25rpx; font-weight: 700; }
+.action::after { border: 0; }

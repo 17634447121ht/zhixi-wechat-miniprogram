@@ -1,0 +1,72 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{dashboard}}">
+    <view class="page-head">
+      <view>
+        <view class="page-title">学习</view>
+        <view class="page-subtitle">完成今天的小目标</view>
+      </view>
+      <view class="today-time">
+        <text class="time-number">{{dashboard.todayStudyMinutes}}</text>
+        <text class="time-unit">分钟</text>
+      </view>
+    </view>
+
+    <view class="task-card">
+      <view class="section-title">今日任务</view>
+
+      <view class="task-row" bind:tap="goWord">
+        <view class="task-icon task-icon--word">词</view>
+        <view class="task-main">
+          <view class="task-line">
+            <text class="task-name">背单词</text>
+            <text class="task-count">{{dashboard.today.newWordCount + dashboard.today.reviewWordCount}} / {{dashboard.wordTarget}}</text>
+          </view>
+          <view class="progress-track"><view class="progress-fill" style="width: {{dashboard.wordProgress}}%;"></view></view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+
+      <view class="task-row" bind:tap="goQuestionBank">
+        <view class="task-icon task-icon--question">题</view>
+        <view class="task-main">
+          <view class="task-line">
+            <text class="task-name">刷题</text>
+            <text class="task-count">{{dashboard.today.questionCount}} / {{dashboard.questionTarget}}</text>
+          </view>
+          <view class="progress-track"><view class="progress-fill progress-fill--orange" style="width: {{dashboard.questionProgress}}%;"></view></view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+
+      <view class="task-row task-row--last">
+        <view class="task-icon task-icon--time">时</view>
+        <view class="task-main">
+          <view class="task-line">
+            <text class="task-name">学习时长</text>
+            <text class="task-count">{{dashboard.todayStudyMinutes}} / {{dashboard.studyTarget}} 分钟</text>
+          </view>
+          <view class="progress-track"><view class="progress-fill progress-fill--blue" style="width: {{dashboard.studyProgress}}%;"></view></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="tool-card">
+      <view class="tool-row" bind:tap="goStatistics">
+        <view class="tool-text">
+          <view class="tool-title">学习统计</view>
+          <view class="tool-caption">查看学习趋势与正确率</view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+      <view class="tool-row tool-row--last" bind:tap="goWeakPoints">
+        <view class="tool-text">
+          <view class="tool-title">薄弱知识点</view>
+          <view class="tool-caption" wx:if="{{dashboard.weakPoints.length}}">发现 {{dashboard.weakPoints.length}} 个待巩固知识点</view>
+          <view class="tool-caption" wx:else>完成练习后生成分析</view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+    </view>
+  </block>
+</view>

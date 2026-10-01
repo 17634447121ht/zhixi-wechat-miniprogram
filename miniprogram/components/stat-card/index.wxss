@@ -1,0 +1,6 @@
+.stat { min-height: 118rpx; padding: 18rpx; border-radius: 14rpx; background: #f4f8f5; border: 1rpx solid #e3ebe6; }
+.stat--orange { background: #fff7ec; border-color: #f5e3c7; }
+.stat--blue { background: #f0f5ff; border-color: #dce6fa; }
+.value { color: #17221c; font-size: 34rpx; font-weight: 780; line-height: 1.2; }
+.label { margin-top: 6rpx; color: #718078; font-size: 21rpx; }
+.note { margin-top: 5rpx; color: #187653; font-size: 19rpx; }

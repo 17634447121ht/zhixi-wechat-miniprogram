@@ -1,0 +1,20 @@
+.profile-page { padding-top: 12rpx; }
+.profile-head { display: flex; align-items: center; gap: 20rpx; padding: 24rpx 4rpx 28rpx; }
+.profile-avatar { width: 96rpx; height: 96rpx; flex: 0 0 auto; border-radius: 50%; background: #e6f1eb; }
+.profile-avatar.avatar-fallback { color: #187653; font-size: 34rpx; }
+.profile-name { font-size: 34rpx; font-weight: 700; line-height: 1.3; }
+.profile-meta { margin-top: 7rpx; color: #758078; font-size: 22rpx; }
+.edit { color: #69756e; font-size: 23rpx; }
+.chevron { color: #a2aaa5; font-size: 32rpx; font-weight: 400; }
+
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); padding: 22rpx 0; border-top: 1rpx solid #e4e9e6; border-bottom: 1rpx solid #e4e9e6; }
+.stat-item { text-align: center; border-right: 1rpx solid #e4e9e6; }
+.stat-item:last-child { border-right: 0; }
+.stats-row .stat-value { font-size: 31rpx; font-weight: 700; }
+.stats-row .stat-label { margin-top: 5rpx; font-size: 21rpx; }
+
+.menu-panel { margin-top: 28rpx; border-top: 1rpx solid #e4e9e6; }
+.simple-menu-item { display: flex; align-items: center; min-height: 86rpx; border-bottom: 1rpx solid #e4e9e6; }
+.simple-menu-icon { width: 48rpx; color: #547165; font-size: 24rpx; font-weight: 700; text-align: center; }
+.simple-menu-title { flex: 1; margin-left: 14rpx; font-size: 27rpx; }
+.profile-foot { padding: 34rpx 0 8rpx; color: #a0a8a3; font-size: 20rpx; text-align: center; }

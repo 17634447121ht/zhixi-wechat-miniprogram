@@ -1,0 +1,12 @@
+node_modules/
+project.private.config.json
+.reference_render/
+.validation-build/
+*.log
+*.tgz
+tmp/
+~$*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

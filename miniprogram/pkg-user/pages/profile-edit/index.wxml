@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{profile}}">
+    <view class="avatar-section">
+      <button class="avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image class="avatar avatar--lg" wx:if="{{avatarUrl}}" src="{{avatarUrl}}" mode="aspectFill" />
+        <view class="avatar avatar--lg avatar-fallback" wx:else>{{initial}}</view>
+        <view class="camera">换</view>
+      </button>
+      <view class="caption mt-sm">头像与昵称仅保存在本机演示数据中</view>
+    </view>
+    <view class="field mt-lg"><view class="field-label">昵称</view><input class="input" type="nickname" maxlength="12" value="{{nickname}}" placeholder="请输入昵称" bindinput="onNickname" /></view>
+    <view class="notice mt-md">根据最小必要原则，V1.0 不收集性别、手机号等非必要信息。</view>
+    <view class="fixed-actions"><button class="button button--primary" loading="{{saving}}" disabled="{{saving}}" bind:tap="save">保存个人信息</button></view>
+  </block>
+</view>

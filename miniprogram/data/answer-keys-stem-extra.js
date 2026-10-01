@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EXTRA_STEM_ANSWER_KEYS = void 0;
+exports.EXTRA_STEM_ANSWER_KEYS = {
+    'q-math-05': { questionId: 'q-math-05', correctKeys: ['B'], analysis: '利用 1-cos x=2sin²(x/2)，原式可写为 1/2·[sin(x/2)/(x/2)]²，极限为 1/2。' },
+    'q-math-06': { questionId: 'q-math-06', correctKeys: ['B'], analysis: '由乘积求导，f′(x)=eˣ+xeˣ=(1+x)eˣ，代入 x=0 得 1。' },
+    'q-math-07': { questionId: 'q-math-07', correctKeys: ['C'], analysis: 'f′(x)=2x-4，令 f′(x)=0，解得唯一驻点 x=2。' },
+    'q-math-08': { questionId: 'q-math-08', correctKeys: ['A', 'B', 'C'], analysis: '内点处可导必然连续，所以函数极限等于函数值；可导也等价于左、右导数存在且相等，但不能推出二阶导数存在。' },
+    'q-math-09': { questionId: 'q-math-09', correctKeys: ['F'], analysis: '导数为零只是可导极值点的必要条件之一，不是充分条件。例如 f(x)=x³ 在 0 处导数为 0，但 0 不是极值点。' },
+    'q-math-10': { questionId: 'q-math-10', correctKeys: ['B'], analysis: '矩阵第二行是第一行的 2 倍，只有一个线性无关的行，且矩阵非零，因此秩为 1。' },
+    'q-math-11': { questionId: 'q-math-11', correctKeys: ['T'], analysis: '行列式具有乘法性质：对任意同阶方阵 A、B，都有 det(AB)=det(A)det(B)。' },
+    'q-math-12': { questionId: 'q-math-12', correctKeys: ['C'], analysis: '可逆对角矩阵的逆矩阵仍为对角矩阵，各非零对角元分别取倒数，所以结果为 diag(1/2,1/3)。' },
+    'q-math-13': { questionId: 'q-math-13', correctKeys: ['A', 'B', 'C'], analysis: 'n 阶方阵可逆等价于行列式非零、秩为 n，也等价于 Ax=0 仅有零解；迹非零既非充分条件也非必要条件。' },
+    'q-math-14': { questionId: 'q-math-14', correctKeys: ['C'], analysis: '六个等可能点数中，偶数为 2、4、6，共 3 个，因此概率为 3/6=1/2。' },
+    'q-math-15': { questionId: 'q-math-15', correctKeys: ['B'], analysis: '独立事件满足 P(AB)=P(A)P(B)=0.4×0.5=0.2。' },
+    'q-math-16': { questionId: 'q-math-16', correctKeys: ['T'], analysis: '期望具有线性性质，只要相关期望存在，就有 E(X+Y)=E(X)+E(Y)，不以独立性为前提。' },
+    'q-408-10': { questionId: 'q-408-10', correctKeys: ['C'], analysis: '栈遵循后进先出原则，最后入栈的 c 最先出栈，随后依次是 b、a。' },
+    'q-408-11': { questionId: 'q-408-11', correctKeys: ['T'], analysis: '设度为 0、1、2 的结点数分别为 n₀、n₁、n₂，由边数关系可推出 n₀=n₂+1。' },
+    'q-408-12': { questionId: 'q-408-12', correctKeys: ['A', 'B', 'C'], analysis: 'BFS 按层扩展通常使用队列，DFS 可用栈或递归；生成树含 n-1 条边。Dijkstra 算法要求边权非负。' },
+    'q-408-13': { questionId: 'q-408-13', correctKeys: ['B'], analysis: '完全二叉树高度为 floor(log₂n)+1。n=31 时高度为 floor(log₂31)+1=4+1=5。' },
+    'q-408-14': { questionId: 'q-408-14', correctKeys: ['B'], analysis: '指令寄存器 IR 保存当前取出并正在译码或执行的指令；PC 通常保存下一条待取指令的地址。' },
+    'q-408-15': { questionId: 'q-408-15', correctKeys: ['A', 'B', 'C'], analysis: 'Cache 利用程序访问局部性，以较小容量和较高速度弥合 CPU 与主存的速度差，通常由硬件管理且对应用程序员透明，但不能保证每次命中。' },
+    'q-408-16': { questionId: 'q-408-16', correctKeys: ['T'], analysis: 'DRAM 需要周期性刷新并依赖供电保存信息，属于易失性存储器，断电后所存数据会丢失。' },
+    'q-408-17': { questionId: 'q-408-17', correctKeys: ['C'], analysis: '同一进程内的线程共享代码、地址空间和打开文件等进程资源，但每个线程拥有自己的栈、寄存器状态和线程标识。' },
+    'q-408-18': { questionId: 'q-408-18', correctKeys: ['A', 'B', 'C'], analysis: 'P 操作申请资源，资源不足时可阻塞；V 操作释放资源并可能唤醒等待者；二元信号量可实现互斥。具体实现不必然忙等。' },
+    'q-408-19': { questionId: 'q-408-19', correctKeys: ['T'], analysis: '虚拟存储利用局部性和外存作为后备，使进程看到的逻辑地址空间可以超过当前实际物理内存容量。' },
+    'q-408-20': { questionId: 'q-408-20', correctKeys: ['C'], analysis: 'TCP 通过 SYN、SYN-ACK、ACK 三个阶段完成典型的三次握手，以同步序号并确认双方收发能力。' },
+    'q-408-21': { questionId: 'q-408-21', correctKeys: ['B'], analysis: '/24 网络保留 8 位主机号，共 2⁸=256 个地址；通常扣除网络地址和广播地址后，可分配 254 个。' },
+    'q-408-22': { questionId: 'q-408-22', correctKeys: ['A', 'B', 'D'], analysis: 'UDP 无连接、面向报文并保留报文边界，首部仅 8 字节、开销较小，但不保证可靠或有序到达。' },
+};

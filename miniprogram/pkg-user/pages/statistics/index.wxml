@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="period-tabs"><view class="period {{period === item.value ? 'period--active' : ''}}" wx:for="{{periods}}" wx:key="value" data-value="{{item.value}}" bind:tap="choosePeriod">{{item.label}}</view></view>
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{stats}}">
+    <view class="stat-hero">
+      <view class="row--between"><view><view class="stat-hero-label">学习时长</view><view class="stat-hero-value">{{stats.studyMinutes}}<text> 分钟</text></view></view><view class="streak"><view class="streak-value">{{stats.continuousStudyDays}}</view><view class="streak-label">连续学习</view></view></view>
+      <view class="stat-hero-foot">累计学习 {{stats.studyDays}} 天，坚持会让曲线慢慢向上。</view>
+    </view>
+
+    <view class="grid-3 mt-md"><view class="stat-card"><view class="stat-value">{{stats.questionCount}}</view><view class="stat-label">刷题</view></view><view class="stat-card"><view class="stat-value">{{stats.accuracy}}%</view><view class="stat-label">正确率</view></view><view class="stat-card"><view class="stat-value">{{stats.wordCount}}</view><view class="stat-label">单词</view></view></view>
+
+    <view class="quick-grid mt-md">
+      <view class="quick" bind:tap="goCalendar"><view class="quick-icon">历</view><view><view class="strong">学习日历</view><view class="caption mt-xs">查看打卡日期</view></view><text>›</text></view>
+      <view class="quick" bind:tap="goSubjects"><view class="quick-icon quick-icon--blue">科</view><view><view class="strong">科目能力</view><view class="caption mt-xs">横向比较正确率</view></view><text>›</text></view>
+    </view>
+
+    <view class="section">
+      <view class="row--between"><view class="section-title">科目正确率</view><view class="brand caption" bind:tap="goSubjects">查看全部 ›</view></view>
+      <view class="card mt-sm bar-list" wx:if="{{stats.subjects.length}}"><progress-bar wx:for="{{stats.subjects}}" wx:key="id" value="{{item.accuracy}}" tone="{{item.accuracy < 60 ? 'orange' : 'green'}}" label="{{item.name}}" detail="{{item.attempts}} 题 · {{item.accuracy}}%" /></view>
+    </view>
+
+    <view class="section">
+      <view class="row--between"><view class="section-title">薄弱知识点</view><view class="brand caption" bind:tap="goWeak">专项提升 ›</view></view>
+      <view class="card mt-sm" wx:if="{{stats.weakPoints.length}}"><view class="weak-row" wx:for="{{stats.weakPoints}}" wx:key="knowledgePointId"><view class="grow"><view class="strong">{{item.knowledgePointName}}</view><view class="caption mt-xs">{{item.subjectName}} · 已练 {{item.total}} 次</view></view><view class="weak-value">{{item.accuracy}}%</view></view></view>
+      <empty-state wx:else icon="◎" title="暂无薄弱点数据" description="完成几道题后会自动统计。" action-text="去刷题" bind:action="goBank" />
+    </view>
+  </block>
+</view>

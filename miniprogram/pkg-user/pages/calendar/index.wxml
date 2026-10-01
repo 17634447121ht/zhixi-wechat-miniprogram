@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="calendar-card">
+    <view class="calendar-head"><button class="month-button" bind:tap="previous">‹</button><view><view class="title-md">{{year}} 年 {{month}} 月</view><view class="caption mt-xs">本月学习 {{calendar.activeDays || 0}} 天</view></view><button class="month-button" bind:tap="next">›</button></view>
+    <view class="weekday-grid"><view wx:for="{{weekdays}}" wx:key="*this">{{item}}</view></view>
+    <view class="day-grid" wx:if="{{calendar}}"><view class="day {{item.blank ? 'day--blank' : ''}} {{item.active ? 'day--active' : ''}} {{item.today ? 'day--today' : ''}}" wx:for="{{calendar.cells}}" wx:key="key"><text wx:if="{{!item.blank}}">{{item.day}}</text><view class="active-dot" wx:if="{{item.active}}"></view></view></view>
+  </view>
+  <view class="notice mt-md">有学习记录的日期会显示绿色圆点；刷题或学习单词都计入有效学习。</view>
+</view>

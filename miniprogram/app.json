@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/study/index",
+    "pages/question-bank/index",
+    "pages/profile/index",
+    "pages/login/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pkg-question",
+      "pages": [
+        "pages/import/index",
+        "pages/exam/index",
+        "pages/subject/index",
+        "pages/chapter/index",
+        "pages/knowledge/index",
+        "pages/practice-config/index",
+        "pages/practice/index",
+        "pages/answer-card/index",
+        "pages/practice-result/index",
+        "pages/wrong/index",
+        "pages/favorite/index",
+        "pages/history/index",
+        "pages/history-detail/index"
+      ]
+    },
+    {
+      "root": "pkg-word",
+      "pages": [
+        "pages/home/index",
+        "pages/book-list/index",
+        "pages/book-detail/index",
+        "pages/study/index",
+        "pages/review/index",
+        "pages/test/index",
+        "pages/favorite/index",
+        "pages/progress/index"
+      ]
+    },
+    {
+      "root": "pkg-user",
+      "pages": [
+        "pages/statistics/index",
+        "pages/calendar/index",
+        "pages/subject-analysis/index",
+        "pages/weak-points/index",
+        "pages/settings/index",
+        "pages/profile-edit/index",
+        "pages/about/index"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F7F8F7",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "知习",
+    "backgroundColor": "#F7F8F7",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#7B877F",
+    "selectedColor": "#187653",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页", "iconPath": "assets/tab/home.png", "selectedIconPath": "assets/tab/home-active.png" },
+      { "pagePath": "pages/study/index", "text": "学习", "iconPath": "assets/tab/study.png", "selectedIconPath": "assets/tab/study-active.png" },
+      { "pagePath": "pages/question-bank/index", "text": "题库", "iconPath": "assets/tab/bank.png", "selectedIconPath": "assets/tab/bank-active.png" },
+      { "pagePath": "pages/profile/index", "text": "我的", "iconPath": "assets/tab/profile.png", "selectedIconPath": "assets/tab/profile-active.png" }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

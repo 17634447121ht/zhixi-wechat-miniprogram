@@ -1,0 +1,15 @@
+.overview-card { padding: 22rpx; border: 1rpx solid #dce8e1; border-radius: 18rpx; background: #f4faf7; }
+.overview-grid { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 28rpx; padding-top: 24rpx; border-top: 1rpx solid #dce9e2; text-align: center; }
+.overview-grid > view { border-right: 1rpx solid #dfe7e2; }
+.overview-grid > view:last-child { border-right: 0; }
+.value { display: block; color: #187653; font-size: 34rpx; font-weight: 800; }
+.small-value { font-size: 26rpx; }
+.label { display: block; margin-top: 5rpx; color: #78857e; font-size: 20rpx; }
+.answer-card { display: flex; align-items: flex-start; gap: 18rpx; margin-top: 16rpx; padding: 24rpx; border: 1rpx solid #e3e9e5; border-radius: 24rpx; background: #fff; }
+.number { display: flex; align-items: center; justify-content: center; width: 52rpx; height: 52rpx; flex: 0 0 auto; border-radius: 16rpx; color: #fff; background: #929d97; font-weight: 800; }
+.number--correct { background: #39996c; }
+.number--wrong { background: #d5605c; }
+.stem { color: #2d3d34; font-size: 26rpx; line-height: 1.6; font-weight: 650; }
+.answer-line { margin-top: 10rpx; color: #718078; font-size: 23rpx; }
+.success-text { color: #187653; }
+.wrong-text { color: #d05753; }

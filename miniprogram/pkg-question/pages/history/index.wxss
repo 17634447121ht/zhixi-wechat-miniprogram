@@ -1,0 +1,7 @@
+.history-card { display: flex; align-items: center; gap: 18rpx; margin-bottom: 14rpx; padding: 22rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }
+.date-block { width: 104rpx; flex: 0 0 auto; padding-right: 18rpx; border-right: 1rpx solid #e5ebe7; text-align: center; }
+.date { color: #34443b; font-size: 23rpx; font-weight: 700; }
+.time { margin-top: 6rpx; color: #8b9690; font-size: 20rpx; }
+.status { display: inline-block; margin-top: 12rpx; padding: 5rpx 10rpx; border-radius: 8rpx; color: #8a661e; background: #fff2d9; font-size: 19rpx; }
+.status--done { color: #176c4c; background: #e7f4ed; }
+.score { color: #187653; font-size: 34rpx; font-weight: 800; }

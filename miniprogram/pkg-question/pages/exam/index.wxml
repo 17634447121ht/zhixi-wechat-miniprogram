@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="暂时无法打开" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="exam-hero exam-hero--{{detail.exam.theme}}">
+      <view class="exam-mark">{{detail.exam.icon}}</view>
+      <view class="grow"><view class="title-lg">{{detail.exam.name}}</view><view class="exam-description">{{detail.exam.description}}</view></view>
+    </view>
+    <view class="section-title section-heading">选择科目</view>
+    <view class="subject-card" wx:for="{{detail.subjects}}" wx:key="id" data-id="{{item.id}}" bind:tap="openSubject">
+      <view class="circle-icon">{{item.icon}}</view>
+      <view class="grow">
+        <view class="row--between"><view class="strong">{{item.name}}</view><view class="caption">{{item.total}} 题</view></view>
+        <view class="caption mt-xs">{{item.description}}</view>
+        <view class="mt-sm"><progress-bar value="{{item.progress}}" label="学习进度" detail="正确率 {{item.accuracy}}%" /></view>
+      </view>
+      <view class="menu-arrow">›</view>
+    </view>
+  </block>
+</view>

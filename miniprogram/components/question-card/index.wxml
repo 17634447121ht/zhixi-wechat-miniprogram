@@ -1,0 +1,35 @@
+<view class="question" wx:if="{{question}}">
+  <view class="meta-row">
+    <view class="meta-tags"><text class="type">{{question.typeLabel}}</text><text class="origin {{question.bankKind === 'CIVIL_REAL' ? 'origin--real' : ''}}">{{question.originLabel}}</text></view>
+    <text class="difficulty">难度 {{question.difficulty}} / 5</text>
+  </view>
+
+  <view class="material" wx:if="{{question.material}}">
+    <view class="material-head" bind:tap="toggleMaterial">
+      <view>
+        <text class="material-tag">材料题</text>
+        <text class="material-title">{{question.material.title}}</text>
+      </view>
+      <text class="material-action">{{materialExpanded ? '收起' : '查看材料'}} {{materialExpanded ? '⌃' : '⌄'}}</text>
+    </view>
+    <view class="material-content" wx:if="{{materialExpanded}}">{{question.material.content}}</view>
+  </view>
+
+  <view class="stem">{{question.stem}}</view>
+  <view class="hint" wx:if="{{question.type === 'MULTIPLE' && !submitted}}">多选题，请选出所有正确选项</view>
+
+  <view class="options">
+    <view
+      wx:for="{{options}}"
+      wx:key="key"
+      class="option {{item.selected ? 'option--selected' : ''}} {{item.correct ? 'option--correct' : ''}} {{item.wrong ? 'option--wrong' : ''}}"
+      data-key="{{item.key}}"
+      bind:tap="choose"
+    >
+      <view class="key">{{item.key}}</view>
+      <view class="option-text">{{item.content}}</view>
+      <view class="mark" wx:if="{{item.correct}}">✓</view>
+      <view class="mark mark--wrong" wx:elif="{{item.wrong}}">×</view>
+    </view>
+  </view>
+</view>

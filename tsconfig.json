@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": false,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "sourceMap": false,
+    "lib": ["ES2020", "DOM"],
+    "typeRoots": ["./miniprogram/typings"]
+  },
+  "include": ["miniprogram/**/*.ts", "miniprogram/**/*.d.ts"]
+}

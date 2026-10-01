@@ -1,0 +1,21 @@
+.word-card { min-height: 540rpx; padding: 28rpx 26rpx; border: 1rpx solid #e2eae5; border-radius: 20rpx; background: #fff; }
+.top-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 22rpx; }
+.word { color: #14251c; font-family: Georgia, "Times New Roman", serif; font-size: 56rpx; font-weight: 700; letter-spacing: 1rpx; }
+.favorite { padding: 4rpx 8rpx; color: #9ba69f; font-size: 42rpx; }
+.favorite--active { color: #eda43a; }
+.phonetic-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12rpx 20rpx; margin-top: 18rpx; }
+.phonetic { color: #74827a; font-size: 23rpx; }
+.speak { min-height: 52rpx; padding: 0 16rpx; margin: 0; border-radius: 12rpx; color: #176c4c; background: #e9f5ef; font-size: 21rpx; line-height: 52rpx; }
+.speak::after { border: 0; }
+.recall { padding: 54rpx 14rpx 24rpx; text-align: center; }
+.recall-mark { display: flex; align-items: center; justify-content: center; width: 76rpx; height: 76rpx; margin: 0 auto; border-radius: 50%; color: #187653; background: #e7f4ed; font-size: 38rpx; font-weight: 800; }
+.recall-title { margin-top: 22rpx; color: #34443b; font-size: 28rpx; font-weight: 700; }
+.recall-subtitle { margin-top: 12rpx; color: #839088; font-size: 23rpx; }
+.reveal { width: 280rpx; min-height: 76rpx; margin: 28rpx auto 0; border-radius: 14rpx; color: #fff; background: #187653; font-size: 27rpx; font-weight: 700; }
+.reveal::after { border: 0; }
+.definition { margin-top: 34rpx; padding-top: 26rpx; border-top: 1rpx solid #e7ece9; }
+.meaning-row { display: flex; align-items: flex-start; gap: 16rpx; }
+.pos { flex: 0 0 auto; margin-top: 4rpx; padding: 5rpx 12rpx; border-radius: 9rpx; color: #176c4c; background: #e7f4ed; font-size: 21rpx; font-weight: 700; }
+.meaning { color: #1e3026; font-size: 31rpx; font-weight: 700; line-height: 1.45; }
+.example { margin-top: 28rpx; color: #34443b; font-family: Georgia, "Times New Roman", serif; font-size: 27rpx; line-height: 1.65; }
+.translation { margin-top: 12rpx; color: #7a877f; font-size: 24rpx; line-height: 1.65; }

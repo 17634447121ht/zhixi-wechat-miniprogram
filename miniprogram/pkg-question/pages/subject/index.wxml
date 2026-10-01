@@ -1,0 +1,35 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="暂时无法打开" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="hero subject-hero">
+      <view class="eyebrow subject-eyebrow">{{detail.exam.shortName}}</view>
+      <view class="hero-title">{{detail.subject.name}}</view>
+      <view class="hero-subtitle">{{detail.subject.description}}</view>
+      <view class="subject-numbers">
+        <view><text class="number">{{detail.stats.answered}}</text><text> / {{detail.stats.total}} 已学习</text></view>
+        <view><text class="number">{{detail.stats.accuracy}}%</text><text> 正确率</text></view>
+      </view>
+      <view class="mt-md"><progress-bar value="{{detail.stats.progress}}" tone="green" /></view>
+    </view>
+
+    <view class="section">
+      <section-header title="开始练习" subtitle="题量会根据当前示例题库自动调整" />
+      <view class="grid-2">
+        <button class="practice-button practice-button--green" data-mode="ORDER" bind:tap="startPractice"><text class="practice-icon">顺</text><text>顺序练习</text><text class="practice-note">按题库顺序学习</text></button>
+        <button class="practice-button practice-button--orange" data-mode="RANDOM" bind:tap="startPractice"><text class="practice-icon">随</text><text>随机练习</text><text class="practice-note">每次组合不同</text></button>
+      </view>
+    </view>
+
+    <view class="section">
+      <section-header title="章节" subtitle="选择章节后可进一步勾选知识点" action-text="全部章节" bind:action="openChapters" />
+      <view class="card chapter-card">
+        <view class="chapter-row" wx:for="{{detail.chapters}}" wx:key="id" data-id="{{item.id}}" bind:tap="openChapter">
+          <view class="chapter-index">{{index + 1}}</view>
+          <view class="grow"><view class="strong">{{item.name}}</view><view class="caption mt-xs">{{item.total}} 题 · 正确率 {{item.accuracy}}%</view></view>
+          <view class="menu-arrow">›</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

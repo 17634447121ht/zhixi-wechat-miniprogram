@@ -1,0 +1,123 @@
+<view class="page import-page">
+  <view class="intro">
+    <view class="title-lg">上传真题</view>
+    <view class="caption mt-xs">直接上传 PDF 或 JSON，题目只保存在本机。</view>
+  </view>
+
+  <view class="kind-switch">
+    <view
+      wx:for="{{kinds}}"
+      wx:key="value"
+      class="kind-item {{selectedKind === item.value ? 'kind-item--active' : ''}}"
+      data-value="{{item.value}}"
+      bind:tap="chooseKind"
+    >
+      <view class="kind-label">{{item.label}}</view>
+      <view class="kind-note">{{item.note}}</view>
+    </view>
+  </view>
+
+  <picker
+    wx:if="{{selectedKind === 'OTHER'}}"
+    mode="selector"
+    range="{{subjects}}"
+    range-key="name"
+    value="{{subjectIndex}}"
+    bindchange="chooseSubject"
+  >
+    <view class="subject-picker">
+      <view>
+        <view class="subject-label">题目科目</view>
+        <view class="subject-value">{{selectedSubjectName}}</view>
+      </view>
+      <view class="picker-arrow">更换 ›</view>
+    </view>
+  </picker>
+
+  <view class="upload-card">
+    <view class="upload-copy">
+      <view class="strong">选择题库文件</view>
+      <view class="caption mt-xs">PDF 最大 10MB，JSON 最大 700KB</view>
+    </view>
+    <button class="button button--secondary button--sm" loading="{{parsing}}" disabled="{{parsing || importing}}" bind:tap="chooseFile">
+      {{parsing ? '解析中' : '选择文件'}}
+    </button>
+  </view>
+  <view class="format-actions">
+    <view class="format-help" bind:tap="showFormatHelp">PDF 识别说明</view>
+    <view class="format-help" bind:tap="copyTemplate">复制 JSON 模板</view>
+  </view>
+
+  <view class="preview-card parsing-card" wx:if="{{parsing}}">
+    <view class="file-line">
+      <view class="file-mark {{selectedFile.format === 'PDF' ? 'file-mark--pdf' : ''}}">{{selectedFile.format}}</view>
+      <view class="grow">
+        <view class="file-name">{{selectedFile.name}}</view>
+        <view class="caption">{{selectedFile.size}}</view>
+      </view>
+      <view class="parsing-status"><text class="parsing-dot"></text>正在解析</view>
+    </view>
+  </view>
+
+  <view class="preview-card" wx:elif="{{preview}}">
+    <view class="file-line">
+      <view class="file-mark {{selectedFile.format === 'PDF' ? 'file-mark--pdf' : ''}}">{{selectedFile.format}}</view>
+      <view class="grow">
+        <view class="file-name">{{selectedFile.name}}</view>
+        <view class="caption">{{selectedFile.size}}</view>
+      </view>
+      <view class="ready">可导入</view>
+    </view>
+    <view class="divider"></view>
+    <view class="preview-title">{{preview.title}}</view>
+    <view class="caption mt-xs" wx:if="{{preview.meta}}">{{preview.meta}}</view>
+    <view class="preview-stats">
+      <view><text class="stat-number">{{preview.questionCount}}</text><text class="stat-text">题目</text></view>
+      <view><text class="stat-number">{{preview.singleCount}}</text><text class="stat-text">单选</text></view>
+      <view><text class="stat-number">{{preview.multipleCount}}</text><text class="stat-text">多选</text></view>
+      <view><text class="stat-number">{{preview.judgeCount}}</text><text class="stat-text">判断</text></view>
+    </view>
+    <view class="pdf-result" wx:if="{{preview.format === 'PDF'}}">
+      识别到 {{preview.detectedQuestionCount}} 题 · 提取 {{preview.extractedTextLength}} 字
+      <text wx:if="{{preview.skippedQuestionCount}}"> · 跳过 {{preview.skippedQuestionCount}} 题</text>
+    </view>
+    <view class="warning-panel" wx:if="{{preview.warnings.length}}">
+      <view class="warning-title">识别提示</view>
+      <view class="warning-item" wx:for="{{preview.warnings}}" wx:key="index">• {{item}}</view>
+      <view class="warning-more" wx:if="{{preview.warningMoreCount}}">另有 {{preview.warningMoreCount}} 条提示</view>
+    </view>
+    <button class="button button--primary import-button" loading="{{importing}}" disabled="{{importing}}" bind:tap="confirmImport">
+      <block wx:if="{{importing}}">正在导入…</block>
+      <block wx:elif="{{selectedKind === 'CIVIL_REAL'}}">确认导入到考公真题</block>
+      <block wx:else>确认导入到其他题</block>
+    </button>
+  </view>
+
+  <view class="list-head">
+    <view>
+      <view class="section-title">已导入题库</view>
+      <view class="caption mt-xs">
+        <block wx:if="{{selectedKind === 'CIVIL_REAL'}}">{{overview.civilReal.bankCount}} 套 · {{overview.civilReal.questionCount}} 题</block>
+        <block wx:else>{{overview.other.bankCount}} 套 · {{overview.other.questionCount}} 题</block>
+      </view>
+    </view>
+  </view>
+
+  <view class="loading list-loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <view class="bank-list" wx:elif="{{banks.length}}">
+    <view class="bank-row" wx:for="{{banks}}" wx:key="id" data-id="{{item.id}}" data-title="{{item.title}}" bind:tap="openBank">
+      <view class="bank-mark">{{selectedKind === 'CIVIL_REAL' ? '真' : '题'}}</view>
+      <view class="grow">
+        <view class="bank-title">{{item.title}}</view>
+        <view class="bank-meta">{{item.meta}} · {{item.questionCount}} 题</view>
+      </view>
+      <view class="bank-action">练习</view>
+      <view class="arrow">›</view>
+    </view>
+  </view>
+  <view class="empty-panel" wx:else>
+    <view class="empty-title" wx:if="{{selectedKind === 'CIVIL_REAL'}}">还没有考公真题</view>
+    <view class="empty-title" wx:else>还没有其他题</view>
+    <view class="caption mt-xs">选择上方文件，导入后可按整套练习。</view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="page">
+  <scroll-view class="filter-scroll" scroll-x enable-flex>
+    <view class="filter-row">
+      <view class="chip {{filter === item.value ? 'chip--active' : ''}}" wx:for="{{filters}}" wx:key="value" data-value="{{item.value}}" bind:tap="chooseFilter">{{item.label}}</view>
+    </view>
+  </scroll-view>
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{!items.length}}" icon="✓" title="暂无错题" description="继续保持！答错的题目会自动汇总到这里。" action-text="去刷题" bind:action="goBank" />
+  <block wx:else>
+    <view class="wrong-card" wx:for="{{items}}" wx:key="questionId">
+      <view class="row--between"><view><text class="tag tag--red">{{item.masteryStatus === 'MASTERED' ? '已掌握' : '未掌握'}}</text><text class="tag ml-tag">{{item.typeLabel}}</text><text class="tag tag--orange ml-tag" wx:if="{{item.originLabel === '考公真题'}}">考公真题</text></view><view class="caption">错 {{item.wrongCount}} 次</view></view>
+      <view class="stem">{{item.stem}}</view>
+      <view class="caption">{{item.subject}} · {{item.chapter}} · 最近 {{item.lastWrongDate}}</view>
+      <view class="actions">
+        <button class="button button--secondary button--sm" data-id="{{item.questionId}}" data-mastered="{{item.masteryStatus === 'MASTERED'}}" bind:tap="toggleMastery">{{item.masteryStatus === 'MASTERED' ? '恢复未掌握' : '标记已掌握'}}</button>
+        <button class="button button--danger button--sm" data-id="{{item.questionId}}" bind:tap="remove">移出</button>
+      </view>
+    </view>
+    <view class="fixed-actions" wx:if="{{practiceCount > 0}}"><button class="button button--primary" bind:tap="start">开始错题练习 · {{practiceCount}} 题可选</button></view>
+  </block>
+</view>

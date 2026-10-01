@@ -1,0 +1,16 @@
+.summary { display: grid; grid-template-columns: repeat(4,1fr); padding: 22rpx 10rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; text-align: center; }
+.summary > view { border-right: 1rpx solid #e7ece9; }
+.summary > view:last-child { border-right: 0; }
+.summary-value { font-size: 36rpx; font-weight: 800; }
+.success { color: #18805a; }
+.muted-value { color: #8b9690; }
+.legend { display: flex; justify-content: center; gap: 28rpx; margin: 32rpx 0 24rpx; color: #718078; font-size: 22rpx; }
+.legend > view { display: flex; align-items: center; gap: 8rpx; }
+.legend-dot { display: inline-block; width: 18rpx; height: 18rpx; border-radius: 6rpx; background: #edf1ee; }
+.legend-dot--correct { background: #48a978; }
+.legend-dot--wrong { background: #db6863; }
+.card-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14rpx; padding: 22rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }
+.card-number { display: flex; align-items: center; justify-content: center; height: 100rpx; border: 2rpx solid #e0e7e3; border-radius: 18rpx; color: #647169; background: #f4f6f5; font-size: 25rpx; font-weight: 700; }
+.card-number--correct { color: #fff; border-color: #3f9d70; background: #3f9d70; }
+.card-number--wrong { color: #fff; border-color: #d9635f; background: #d9635f; }
+.card-number--current { border-color: #eda439; }

@@ -1,0 +1,51 @@
+<view class="page word-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{dashboard}}">
+    <view class="book-section">
+      <view class="section-label">当前词书</view>
+      <view class="book-row" bind:tap="goBooks">
+        <view class="grow">
+          <view class="book-name">{{dashboard.book.name}}</view>
+          <view class="book-meta">已学 {{dashboard.book.learned}} / {{dashboard.book.total}}</view>
+        </view>
+        <view class="change-book">更换</view>
+        <view class="arrow">›</view>
+      </view>
+      <view class="book-progress"><progress-bar value="{{dashboard.book.progress}}" /></view>
+    </view>
+
+    <view class="content-section">
+      <view class="section-label">今日学习</view>
+      <view class="task-list">
+        <view class="task-row" bind:tap="goStudy">
+          <view class="task-mark">新</view>
+          <view class="grow">
+            <view class="task-title">学习新词</view>
+            <view class="task-meta">今日已学 {{dashboard.todayNew}}</view>
+          </view>
+          <view class="task-count">{{dashboard.newRemaining}}<text> 词</text></view>
+          <view class="arrow">›</view>
+        </view>
+        <view class="task-row" bind:tap="goReview">
+          <view class="task-mark">复</view>
+          <view class="grow">
+            <view class="task-title">复习单词</view>
+            <view class="task-meta">今日已复习 {{dashboard.todayReview}}</view>
+          </view>
+          <view class="task-count">{{dashboard.reviewRemaining}}<text> 词</text></view>
+          <view class="arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-section">
+      <view class="section-label">更多</view>
+      <view class="tool-list">
+        <view class="tool-row" bind:tap="goTest"><view class="tool-mark">测</view><view class="grow">单词测试</view><view class="arrow">›</view></view>
+        <view class="tool-row" bind:tap="goBooks"><view class="tool-mark">书</view><view class="grow">全部词书</view><view class="arrow">›</view></view>
+        <view class="tool-row" bind:tap="goFavorite"><view class="tool-mark">藏</view><view class="grow">生词本</view><view class="arrow">›</view></view>
+        <view class="tool-row" bind:tap="goProgress"><view class="tool-mark">统</view><view class="grow">学习进度</view><view class="arrow">›</view></view>
+      </view>
+    </view>
+  </block>
+</view>

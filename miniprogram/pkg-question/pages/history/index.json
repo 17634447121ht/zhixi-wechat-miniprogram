@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "做题记录", "enablePullDownRefresh": true, "usingComponents": { "empty-state": "/components/empty-state/index" } }

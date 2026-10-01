@@ -1,0 +1,6 @@
+.filter-row { display: flex; gap: 12rpx; margin-bottom: 20rpx; }
+.favorite-card { position: relative; margin-bottom: 14rpx; padding: 22rpx; border: 1rpx solid #e3e9e5; border-radius: 18rpx; background: #fff; }
+.subject { margin-left: 14rpx; }
+.stem { margin-top: 18rpx; padding-right: 16rpx; color: #2d3d34; font-size: 28rpx; font-weight: 650; line-height: 1.65; }
+.remove { min-height: 58rpx; margin: 20rpx 0 0 auto; padding: 0 12rpx; color: #b57923; background: transparent; font-size: 22rpx; line-height: 58rpx; }
+.remove::after { border: 0; }

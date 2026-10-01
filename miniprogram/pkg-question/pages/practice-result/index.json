@@ -1,0 +1,1 @@
+{ "navigationBarTitleText": "练习报告", "usingComponents": { "progress-bar": "/components/progress-bar/index", "empty-state": "/components/empty-state/index" } }

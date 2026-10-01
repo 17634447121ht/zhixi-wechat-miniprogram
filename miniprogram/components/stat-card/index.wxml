@@ -1,0 +1,5 @@
+<view class="stat stat--{{accent}}">
+  <view class="value">{{value}}</view>
+  <view class="label">{{label}}</view>
+  <view class="note" wx:if="{{note}}">{{note}}</view>
+</view>

@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="filter-row">
+    <view class="chip {{filter === item.value ? 'chip--active' : ''}}" wx:for="{{filters}}" wx:key="value" data-value="{{item.value}}" bind:tap="chooseFilter">{{item.label}}</view>
+  </view>
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{!items.length}}" icon="☆" title="还没有收藏题目" description="刷题时点击收藏，想复习时就能快速找到。" action-text="去题库" bind:action="goBank" />
+  <block wx:else>
+    <view class="favorite-card" wx:for="{{items}}" wx:key="questionId">
+      <view><text class="tag">{{item.typeLabel}}</text><text class="tag tag--orange subject" wx:if="{{item.originLabel === '考公真题'}}">考公真题</text><text class="caption subject">{{item.subject}} · {{item.chapter}}</text></view>
+      <view class="stem">{{item.stem}}</view>
+      <button class="remove" data-id="{{item.questionId}}" bind:tap="remove">★ 取消收藏</button>
+    </view>
+    <view class="fixed-actions"><button class="button button--primary" bind:tap="start">开始收藏练习 · {{items.length}} 题可选</button></view>
+  </block>
+</view>

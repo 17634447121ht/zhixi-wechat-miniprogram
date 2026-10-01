@@ -1,0 +1,27 @@
+.page-head { display: flex; align-items: flex-end; justify-content: space-between; padding: 28rpx 4rpx 34rpx; }
+.page-title { color: #17211c; font-size: 44rpx; font-weight: 750; line-height: 1.2; }
+.page-subtitle { margin-top: 8rpx; color: #8a948f; font-size: 24rpx; }
+.today-time { display: flex; align-items: baseline; gap: 6rpx; color: #187653; }
+.time-number { font-size: 42rpx; font-weight: 760; line-height: 1; }
+.time-unit { font-size: 22rpx; }
+.task-card, .tool-card { overflow: hidden; margin-bottom: 24rpx; border: 1rpx solid #e5ebe7; border-radius: 22rpx; background: #fff; }
+.section-title { padding: 26rpx 28rpx 10rpx; color: #17211c; font-size: 28rpx; font-weight: 700; }
+.task-row { display: flex; align-items: center; gap: 20rpx; min-height: 104rpx; margin: 0 28rpx; border-bottom: 1rpx solid #edf1ee; }
+.task-row--last { border-bottom: 0; }
+.task-icon { display: flex; align-items: center; justify-content: center; width: 54rpx; height: 54rpx; flex: 0 0 auto; border-radius: 16rpx; color: #187653; background: #eaf6ef; font-size: 22rpx; font-weight: 750; }
+.task-icon--question { color: #ad5b2f; background: #fff1e8; }
+.task-icon--time { color: #3c66a6; background: #edf3ff; }
+.task-main { flex: 1; min-width: 0; }
+.task-line { display: flex; align-items: center; justify-content: space-between; gap: 18rpx; }
+.task-name { color: #26312b; font-size: 27rpx; font-weight: 650; }
+.task-count { color: #7e8983; font-size: 22rpx; }
+.progress-track { overflow: hidden; height: 6rpx; margin-top: 14rpx; border-radius: 999rpx; background: #edf1ee; }
+.progress-fill { height: 100%; border-radius: 999rpx; background: #2a936b; }
+.progress-fill--orange { background: #dc7a41; }
+.progress-fill--blue { background: #5782c5; }
+.tool-row { display: flex; align-items: center; justify-content: space-between; min-height: 108rpx; margin: 0 28rpx; border-bottom: 1rpx solid #edf1ee; }
+.tool-row--last { border-bottom: 0; }
+.tool-text { flex: 1; min-width: 0; }
+.tool-title { color: #26312b; font-size: 27rpx; font-weight: 650; }
+.tool-caption { margin-top: 7rpx; color: #8a948f; font-size: 22rpx; }
+.arrow { flex: 0 0 auto; color: #b2bbb6; font-size: 38rpx; font-weight: 300; }

@@ -1,0 +1,4 @@
+.weak-card { margin-top: 14rpx; padding: 22rpx; border: 1rpx solid #eadfdd; border-radius: 18rpx; background: #fff; }
+.score { padding: 10rpx 16rpx; border-radius: 13rpx; color: #b44d49; background: #fff0ef; font-size: 29rpx; font-weight: 850; }
+.practice { min-height: 62rpx; margin: 18rpx 0 0 auto; padding: 0 8rpx; color: #187653; background: transparent; font-size: 23rpx; line-height: 62rpx; }
+.practice::after { border: 0; }

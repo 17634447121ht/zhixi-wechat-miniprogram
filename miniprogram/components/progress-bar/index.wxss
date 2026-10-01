@@ -1,0 +1,8 @@
+.progress-head { display: flex; align-items: center; justify-content: space-between; gap: 16rpx; margin-bottom: 10rpx; }
+.progress-label { color: #34443b; font-size: 25rpx; font-weight: 650; }
+.progress-detail { color: #718078; font-size: 23rpx; }
+.track { height: 10rpx; overflow: hidden; border-radius: 6rpx; background: #e7ece8; }
+.fill { height: 100%; border-radius: inherit; background: #2b8a64; transition: width .25s ease; }
+.fill--orange { background: #df8249; }
+.fill--blue { background: #597fc4; }
+.fill--red { background: #d46762; }

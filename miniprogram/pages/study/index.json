@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "学习",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "progress-bar": "/components/progress-bar/index",
+    "section-header": "/components/section-header/index",
+    "empty-state": "/components/empty-state/index"
+  }
+}

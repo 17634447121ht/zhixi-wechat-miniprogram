@@ -1,0 +1,1 @@
+.chapter-card { margin-top: 14rpx; padding: 22rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }

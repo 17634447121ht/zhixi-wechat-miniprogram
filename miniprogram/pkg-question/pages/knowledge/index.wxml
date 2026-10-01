@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="知识点加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="row--between intro-row">
+      <view><view class="title-lg">{{detail.chapter.name}}</view><view class="caption mt-xs">可多选；未选择时练习整个章节</view></view>
+      <view class="select-all" bind:tap="selectAll">{{selectedIds.length === detail.knowledgePoints.length ? '清空' : '全选'}}</view>
+    </view>
+    <view class="point-list">
+      <view class="point {{item.selected ? 'point--selected' : ''}}" wx:for="{{detail.knowledgePoints}}" wx:key="id" data-id="{{item.id}}" bind:tap="toggle">
+        <view class="checkbox">{{item.selected ? '✓' : ''}}</view>
+        <view class="grow"><view class="strong">{{item.name}}</view><view class="caption mt-xs">{{item.description}} · {{item.total}} 题</view></view>
+        <view class="accuracy">{{item.accuracy}}%</view>
+      </view>
+    </view>
+    <view class="fixed-actions"><button class="button button--primary" bind:tap="start"><block wx:if="{{selectedIds.length}}">专项练习（{{selectedIds.length}} 个知识点）</block><block wx:else>专项练习（整章）</block></button></view>
+  </block>
+</view>

@@ -1,0 +1,19 @@
+<view class="page word-study-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{!current && !finished}}" icon="✓" title="{{emptyTitle}}" description="{{emptyDescription}}" action-text="返回单词首页" bind:action="goHome" />
+  <view class="finish" wx:elif="{{finished}}"><view class="finish-icon">✓</view><view class="title-lg mt-md">本组学习完成</view><view class="body mt-sm">你已经为每个单词安排了下一次复习。</view><view class="button-row mt-lg"><button class="button button--secondary" bind:tap="goTest">做个测试</button><button class="button button--primary" bind:tap="goHome">返回首页</button></view></view>
+  <block wx:elif="{{current}}">
+    <view class="row--between word-progress"><view class="caption">{{mode === 'FAVORITE' ? '生词复习' : '今日新词'}}</view><view class="caption">{{index + 1}} / {{queue.length}}</view></view>
+    <progress-bar value="{{(index + 1) / queue.length * 100}}" />
+    <view class="mt-md"><word-card word="{{current}}" revealed="{{revealed}}" bind:reveal="reveal" bind:speak="speak" bind:favorite="favorite" /></view>
+    <view class="rating-panel" wx:if="{{revealed}}">
+      <view class="caption center">你对这个词有多熟悉？</view>
+      <view class="rating-grid">
+        <button class="rating rating--unknown" data-rating="0" disabled="{{submitting}}" bind:tap="rate"><text>不认识</text><text class="rating-note">10 分钟</text></button>
+        <button class="rating rating--fuzzy" data-rating="1" disabled="{{submitting}}" bind:tap="rate"><text>模糊</text><text class="rating-note">1 天</text></button>
+        <button class="rating rating--known" data-rating="2" disabled="{{submitting}}" bind:tap="rate"><text>认识</text><text class="rating-note">3 天</text></button>
+        <button class="rating rating--mastered" data-rating="3" disabled="{{submitting}}" bind:tap="rate"><text>熟练</text><text class="rating-note">7 天</text></button>
+      </view>
+    </view>
+  </block>
+</view>

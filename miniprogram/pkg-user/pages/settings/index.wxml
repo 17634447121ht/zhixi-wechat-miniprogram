@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{settings}}">
+    <view class="section-title">每日目标</view>
+    <view class="settings-card mt-sm">
+      <view class="setting-row"><view class="grow"><view class="strong">每日新词</view><view class="caption mt-xs">首页和单词页会显示完成进度</view></view><view class="number-field"><input type="number" value="{{settings.dailyWordTarget}}" data-key="dailyWordTarget" bindblur="onNumber" /><text>个</text></view></view>
+      <view class="setting-row"><view class="grow"><view class="strong">每日刷题</view><view class="caption mt-xs">所有练习模式都会累计</view></view><view class="number-field"><input type="number" value="{{settings.dailyQuestionTarget}}" data-key="dailyQuestionTarget" bindblur="onNumber" /><text>题</text></view></view>
+      <view class="setting-row"><view class="grow"><view class="strong">每日学习</view><view class="caption mt-xs">按答题和单词学习耗时统计</view></view><view class="number-field"><input type="number" value="{{settings.dailyStudyMinutes}}" data-key="dailyStudyMinutes" bindblur="onNumber" /><text>分钟</text></view></view>
+    </view>
+
+    <view class="section-title mt-lg">答题偏好</view>
+    <view class="settings-card mt-sm">
+      <view class="setting-row"><view class="grow"><view class="strong">答题后立即显示解析</view><view class="caption mt-xs">提交后展示答案、解析和知识点</view></view><switch color="#187653" checked="{{settings.showAnalysisAfterAnswer}}" data-key="showAnalysisAfterAnswer" bindchange="onSwitch" /></view>
+      <view class="setting-row"><view class="grow"><view class="strong">自动进入下一题</view><view class="caption mt-xs">展示结果约 1 秒后自动前进</view></view><switch color="#187653" checked="{{settings.autoNextQuestion}}" data-key="autoNextQuestion" bindchange="onSwitch" /></view>
+    </view>
+    <view class="notice mt-md">建议先保留“立即显示解析”，在练习后及时纠正理解偏差。</view>
+    <view class="fixed-actions"><button class="button button--primary" loading="{{saving}}" disabled="{{saving}}" bind:tap="save">保存设置</button></view>
+  </block>
+</view>

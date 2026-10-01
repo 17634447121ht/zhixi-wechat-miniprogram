@@ -1,0 +1,27 @@
+.question { color: #17221c; }
+.meta-row { display: flex; align-items: center; justify-content: space-between; gap: 18rpx; }
+.meta-tags { display: flex; align-items: center; gap: 10rpx; }
+.type { padding: 8rpx 16rpx; border-radius: 10rpx; color: #176c4c; background: #e7f4ed; font-size: 22rpx; font-weight: 700; }
+.origin { padding: 8rpx 14rpx; border-radius: 10rpx; color: #657169; background: #f0f3f1; font-size: 20rpx; }
+.origin--real { color: #9a5b22; background: #fff1e3; font-weight: 700; }
+.difficulty { color: #78857e; font-size: 22rpx; }
+.material { margin-top: 22rpx; border: 1rpx solid #dce8e1; border-radius: 14rpx; background: #f8fbf9; }
+.material-head { display: flex; align-items: center; justify-content: space-between; gap: 18rpx; padding: 18rpx; }
+.material-tag { margin-right: 12rpx; padding: 5rpx 10rpx; border-radius: 8rpx; color: #8e5a12; background: #fff0d7; font-size: 19rpx; }
+.material-title { color: #34443b; font-size: 24rpx; font-weight: 650; }
+.material-action { flex: 0 0 auto; color: #187653; font-size: 22rpx; }
+.material-content { padding: 18rpx; color: #4b5c52; font-size: 25rpx; line-height: 1.65; border-top: 1rpx solid #d9e4dd; }
+.stem { margin-top: 26rpx; color: #17221c; font-size: 30rpx; font-weight: 650; line-height: 1.65; }
+.hint { margin-top: 14rpx; color: #9a6b23; font-size: 22rpx; }
+.options { display: flex; flex-direction: column; gap: 14rpx; margin-top: 26rpx; }
+.option { display: flex; align-items: flex-start; min-height: 84rpx; gap: 16rpx; padding: 16rpx 18rpx; border: 2rpx solid #e1e8e3; border-radius: 14rpx; background: #fff; }
+.key { display: flex; align-items: center; justify-content: center; width: 48rpx; height: 48rpx; flex: 0 0 auto; border-radius: 10rpx; color: #5f6c65; background: #f0f3f1; font-size: 23rpx; font-weight: 750; }
+.option-text { flex: 1; padding-top: 5rpx; color: #34443b; font-size: 27rpx; line-height: 1.58; }
+.option--selected { border-color: #68ad8c; background: #f1f9f5; }
+.option--selected .key { color: #fff; background: #187653; }
+.option--correct { border-color: #4eae7b; background: #edf8f2; }
+.option--correct .key { color: #fff; background: #23855e; }
+.option--wrong { border-color: #e27b75; background: #fff1f0; }
+.option--wrong .key { color: #fff; background: #d95b58; }
+.mark { padding-top: 8rpx; color: #18815a; font-size: 28rpx; font-weight: 800; }
+.mark--wrong { color: #d95b58; }

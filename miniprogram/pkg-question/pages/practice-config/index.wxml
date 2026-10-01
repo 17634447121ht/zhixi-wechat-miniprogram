@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="无法配置练习" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:else>
+    <view class="summary-card">
+      <view><view class="eyebrow">当前范围</view><view class="title-lg mt-sm">{{scopeLabel}}</view></view>
+      <view class="available"><text class="available-number">{{available}}</text><text class="caption"> 道可用</text></view>
+    </view>
+
+    <view class="section" wx:if="{{config.practiceType !== 'WRONG' && config.practiceType !== 'FAVORITE'}}">
+      <view class="section-title">练习模式</view>
+      <view class="mode-grid mt-sm">
+        <view class="mode {{config.practiceType === item.value ? 'mode--active' : ''}}" wx:for="{{modes}}" wx:key="value" data-value="{{item.value}}" bind:tap="chooseMode">
+          <view class="strong">{{item.label}}</view><view class="caption mt-xs">{{item.note}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">题目数量</view>
+      <view class="chip-row mt-sm">
+        <view class="count-chip {{config.count === item.value ? 'count-chip--active' : ''}} {{item.disabled ? 'count-chip--disabled' : ''}}" wx:for="{{counts}}" wx:key="value" data-value="{{item.value}}" bind:tap="chooseCount">{{item.value}} 题</view>
+      </view>
+      <view class="caption mt-sm" wx:if="{{available < 5}}">示例题库当前仅有 {{available}} 题，已自动按可用题量调整。</view>
+    </view>
+
+    <view class="section" wx:if="{{config.practiceType !== 'WRONG' && config.practiceType !== 'FAVORITE'}}">
+      <view class="section-title">难度</view>
+      <view class="caption mt-xs">不选择表示不限难度</view>
+      <view class="difficulty-row mt-sm">
+        <view class="difficulty {{item.selected ? 'difficulty--active' : ''}}" wx:for="{{difficulties}}" wx:key="value" data-value="{{item.value}}" bind:tap="toggleDifficulty">{{item.value}}</view>
+      </view>
+    </view>
+
+    <view class="notice mt-lg">随机练习创建后会固定本次题目顺序，退出后仍可从原位置继续。</view>
+    <view class="fixed-actions"><button class="button button--primary {{!available ? 'button--disabled' : ''}}" loading="{{creating}}" disabled="{{!available || creating}}" bind:tap="create"><block wx:if="{{creating}}">正在生成…</block><block wx:else>开始练习 · {{config.count}} 题</block></button></view>
+  </block>
+</view>

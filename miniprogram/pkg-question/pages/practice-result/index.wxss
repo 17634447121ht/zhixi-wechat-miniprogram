@@ -1,0 +1,13 @@
+.result-page { padding-top: 8rpx; }
+.result-hero { padding: 28rpx; border-radius: 18rpx; color: #fff; background: #176b4b; text-align: center; }
+.result-eyebrow { color: rgba(255,255,255,.7); }
+.score-ring { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 164rpx; height: 164rpx; margin: 20rpx auto; border: 8rpx solid rgba(255,255,255,.3); border-radius: 50%; }
+.score { font-size: 46rpx; font-weight: 850; }
+.score-label { margin-top: 4rpx; color: rgba(255,255,255,.72); font-size: 21rpx; }
+.result-title { color: #fff; }
+.result-note { margin-top: 10rpx; color: rgba(255,255,255,.76); font-size: 23rpx; }
+.result-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10rpx; margin-top: 16rpx; }
+.result-stat { display: flex; flex-direction: column; justify-content: center; min-height: 104rpx; padding: 12rpx 6rpx; border: 1rpx solid #e1e9e4; border-radius: 14rpx; background: #fff; text-align: center; }
+.result-stat .value { font-size: 28rpx; font-weight: 800; }
+.success { color: #18805a; }
+.button-stack { display: flex; flex-direction: column; gap: 16rpx; }

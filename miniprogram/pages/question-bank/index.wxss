@@ -1,0 +1,28 @@
+.page-head { display: flex; align-items: center; gap: 24rpx; padding: 28rpx 4rpx 30rpx; }
+.page-title { color: #17211c; font-size: 44rpx; font-weight: 750; line-height: 1.2; }
+.page-subtitle { margin-top: 8rpx; color: #8a948f; font-size: 24rpx; }
+.head-action { flex: 0 0 auto; padding: 12rpx 18rpx; border-radius: 12rpx; color: #187653; background: #eaf6ef; font-size: 24rpx; font-weight: 700; }
+.group-title { margin: 4rpx 4rpx 12rpx; color: #718078; font-size: 22rpx; font-weight: 650; }
+.study-list, .mine-list { overflow: hidden; margin-bottom: 24rpx; border: 1rpx solid #e5ebe7; border-radius: 18rpx; background: #fff; }
+.study-row { display: flex; align-items: center; gap: 20rpx; min-height: 122rpx; margin: 0 28rpx; border-bottom: 1rpx solid #edf1ee; }
+.study-row:last-child { border-bottom: 0; }
+.row-symbol { display: flex; align-items: center; justify-content: center; width: 62rpx; height: 62rpx; flex: 0 0 auto; border-radius: 17rpx; color: #187653; background: #eaf6ef; font-size: 23rpx; font-weight: 750; }
+.row-symbol--real { color: #ad5b2f; background: #fff1e8; }
+.row-symbol--other { color: #53665c; background: #eef2ef; }
+.row-symbol--orange { color: #ad5b2f; background: #fff1e8; }
+.row-symbol--blue { color: #3c66a6; background: #edf3ff; }
+.row-main { flex: 1; min-width: 0; }
+.row-line { display: flex; align-items: center; gap: 14rpx; }
+.row-title { color: #26312b; font-size: 28rpx; font-weight: 680; }
+.row-count { padding: 4rpx 10rpx; border-radius: 999rpx; color: #718078; background: #f1f4f2; font-size: 19rpx; }
+.row-tag { padding: 4rpx 10rpx; border-radius: 8rpx; color: #a5582d; background: #fff1e8; font-size: 19rpx; }
+.row-desc { overflow: hidden; margin-top: 8rpx; color: #8a948f; font-size: 22rpx; text-overflow: ellipsis; white-space: nowrap; }
+.arrow { flex: 0 0 auto; color: #b2bbb6; font-size: 38rpx; font-weight: 300; }
+.mine-row { display: flex; align-items: center; gap: 18rpx; min-height: 104rpx; margin: 0 28rpx; border-bottom: 1rpx solid #edf1ee; }
+.mine-row--last { border-bottom: 0; }
+.mine-mark { display: flex; align-items: center; justify-content: center; width: 48rpx; height: 48rpx; flex: 0 0 auto; border-radius: 14rpx; font-size: 20rpx; font-weight: 750; }
+.mine-mark--word { color: #187653; background: #eaf6ef; font-size: 18rpx; }
+.mine-mark--wrong { color: #ba4e49; background: #fff0ef; }
+.mine-mark--favorite { color: #a56d1b; background: #fff6df; }
+.mine-title { color: #26312b; font-size: 26rpx; font-weight: 650; }
+.mine-desc { flex: 1; color: #9aa39e; font-size: 21rpx; text-align: right; }

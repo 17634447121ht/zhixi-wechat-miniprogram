@@ -1,0 +1,28 @@
+import type { AnswerKey } from '../types/index';
+
+export const EXTRA_HUMANITIES_ANSWER_KEYS: Record<string, AnswerKey> = {
+  'q-pol-05': { questionId: 'q-pol-05', correctKeys: ['C'], analysis: '内因是事物变化发展的根据，事物内部矛盾是发展的根本原因；外因是变化的条件，要通过内因起作用。' },
+  'q-pol-06': { questionId: 'q-pol-06', correctKeys: ['A', 'B', 'C'], analysis: '商品具有使用价值和价值两个因素；具体劳动创造使用价值，抽象劳动形成价值。价值量由社会必要劳动时间决定，不由使用价值大小直接决定。' },
+  'q-pol-07': { questionId: 'q-pol-07', correctKeys: ['T'], analysis: '普遍性不能脱离特殊性独立存在，而是存在于特殊事物之中，并通过一个个特殊矛盾表现出来。' },
+  'q-pol-08': { questionId: 'q-pol-08', correctKeys: ['A'], analysis: '社会主义初级阶段是我国的基本国情和最大实际，是认识现实、制定路线方针政策的重要依据。' },
+  'q-pol-09': { questionId: 'q-pol-09', correctKeys: ['A', 'B', 'C'], analysis: '新发展理念包括创新、协调、绿色、开放、共享。“封闭”与开放发展相背离。' },
+  'q-pol-10': { questionId: 'q-pol-10', correctKeys: ['T'], analysis: '改革开放深刻改变中国，是决定当代中国命运、实现中华民族伟大复兴的关键一招。' },
+  'q-pol-11': { questionId: 'q-pol-11', correctKeys: ['B'], analysis: '新文化运动以民主和科学为主要旗帜，推动思想解放和新思想传播。' },
+  'q-pol-12': { questionId: 'q-pol-12', correctKeys: ['A', 'B', 'C'], analysis: '五四运动具有彻底反帝反封建的革命性，促进工人阶级登上政治舞台和马克思主义传播；中华人民共和国成立于 1949 年。' },
+  'q-pol-13': { questionId: 'q-pol-13', correctKeys: ['F'], analysis: '辛亥革命结束了君主专制制度，但没有完成反帝反封建任务，也没有改变半殖民地半封建社会性质。' },
+  'q-pol-14': { questionId: 'q-pol-14', correctKeys: ['A'], analysis: '这句话强调行政机关既应履行法定职责，又不能超越法定授权，体现行政权力依法行使。' },
+  'q-pol-15': { questionId: 'q-pol-15', correctKeys: ['A', 'B', 'C'], analysis: '权利与义务相互联系，权利具有边界，行使权利不得损害国家、社会、集体利益和他人合法权利。' },
+  'q-pol-16': { questionId: 'q-pol-16', correctKeys: ['T'], analysis: '宪法规定国家根本制度和根本任务，是根本法，具有最高法律地位、法律权威和法律效力。' },
+  'q-eng-05': { questionId: 'q-eng-05', correctKeys: ['A'], analysis: '前半句说明计划雄心勃勃、实施有难度，后半句却按期完成，构成转折，nevertheless 意为“然而、尽管如此”。' },
+  'q-eng-06': { questionId: 'q-eng-06', correctKeys: ['A'], analysis: 'consolidate 表示“巩固”，regular review 与巩固新学信息构成自然搭配。' },
+  'q-eng-07': { questionId: 'q-eng-07', correctKeys: ['C'], analysis: '固定结构 not only...but also... 表示“不仅……而且……”。' },
+  'q-eng-08': { questionId: 'q-eng-08', correctKeys: ['B'], analysis: 'regard A as B 是固定搭配，表示“把 A 看作 B”。' },
+  'q-eng-09': { questionId: 'q-eng-09', correctKeys: ['B'], analysis: '材料第二句明确说明树木通过提供树荫并经叶片释放水分来缓解城市热效应。' },
+  'q-eng-10': { questionId: 'q-eng-10', correctKeys: ['A'], analysis: '材料指出 young trees need years to grow，因此新栽树木的降温收益不能立即充分体现。' },
+  'q-eng-11': { questionId: 'q-eng-11', correctKeys: ['B'], analysis: '末句反对只统计树苗数量，强调适生树种以及土壤、水和空间，说明项目应关注长期存活和生长条件。' },
+  'q-eng-12': { questionId: 'q-eng-12', correctKeys: ['B'], analysis: '首句直接指出，用自己的话改写要求学生筛选重要信息，并把它与已有知识联系起来。' },
+  'q-eng-13': { questionId: 'q-eng-13', correctKeys: ['B'], analysis: '材料说数字设备本身并非有害，关键在于使用方式，因此其学习效果取决于如何使用。' },
+  'q-eng-14': { questionId: 'q-eng-14', correctKeys: ['C'], analysis: '全文讨论主动加工、简明组织、复习和回忆如何让笔记促进学习，C 最能概括主题。' },
+  'q-eng-15': { questionId: 'q-eng-15', correctKeys: ['A'], analysis: 'that appear efficient 修饰 policies，that become visible only later 修饰 costs，may 表示“可能”，A 完整保留了这些关系。' },
+  'q-eng-16': { questionId: 'q-eng-16', correctKeys: ['C'], analysis: 'not whether...but whether... 对比的重点是“不是是否犯错，而是错误是否被审视并纠正”，C 最准确。' },
+};

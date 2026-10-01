@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:elif="{{progress}}">
+    <view class="hero progress-hero"><view class="eyebrow progress-eyebrow">{{progress.book.code}}</view><view class="hero-title">已学 {{progress.learned}} 个词</view><view class="hero-subtitle">{{progress.book.name}}</view><view class="mt-md"><progress-bar value="{{progress.progress}}" label="总进度" detail="{{progress.progress}}%" /></view></view>
+    <view class="grid-3 mt-md"><view class="stat-card"><view class="stat-value">{{progress.total}}</view><view class="stat-label">总词数</view></view><view class="stat-card"><view class="stat-value">{{progress.mastered}}</view><view class="stat-label">已掌握</view></view><view class="stat-card"><view class="stat-value">{{progress.due}}</view><view class="stat-label">待复习</view></view></view>
+    <view class="section"><view class="section-title">掌握程度</view><view class="card mt-sm bar-list"><progress-bar wx:for="{{progress.levels}}" wx:key="level" value="{{item.percentage}}" tone="{{item.level === 0 ? 'red' : item.level === 1 ? 'orange' : item.level === 2 ? 'blue' : 'green'}}" label="{{item.label}}" detail="{{item.count}} 个" /></view></view>
+    <view class="section"><view class="section-title">今日学习</view><view class="grid-2 mt-sm"><view class="card center"><view class="stat-value">{{progress.todayNew}}</view><view class="stat-label">新词</view></view><view class="card center"><view class="stat-value">{{progress.todayReview}}</view><view class="stat-label">复习</view></view></view></view>
+    <view class="button-row mt-lg"><button class="button button--outline" bind:tap="goReview">开始复习</button><button class="button button--primary" bind:tap="goStudy">继续学习</button></view>
+  </block>
+</view>

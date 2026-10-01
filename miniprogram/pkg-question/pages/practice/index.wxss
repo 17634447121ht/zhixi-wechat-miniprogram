@@ -1,0 +1,16 @@
+.practice-page { padding-top: 18rpx; }
+.practice-head { padding: 0 4rpx 18rpx; }
+.head-actions { display: flex; gap: 28rpx; color: #187653; font-size: 24rpx; font-weight: 700; }
+.question-wrap { padding: 22rpx; }
+.answer-panel { margin-top: 18rpx; padding: 22rpx; border: 1rpx solid #cde5d8; border-radius: 16rpx; background: #edf8f2; }
+.answer-panel--wrong { border-color: #f0d1cf; background: #fff3f2; }
+.answer-title { color: #187653; font-size: 29rpx; font-weight: 800; }
+.answer-panel--wrong .answer-title { color: #c44f4b; }
+.answer-line { margin-top: 14rpx; color: #3f5047; font-size: 26rpx; }
+.analysis-title { font-weight: 750; }
+.analysis { margin-top: 12rpx; color: #405147; font-size: 26rpx; line-height: 1.75; }
+.knowledge-row { display: flex; flex-wrap: wrap; gap: 10rpx; margin-top: 22rpx; }
+.source { margin-top: 20rpx; color: #839088; font-size: 21rpx; }
+.reveal-button { margin-top: 22rpx; }
+.nav-row { display: grid; grid-template-columns: 128rpx 1fr 108rpx; align-items: center; gap: 14rpx; }
+.submit-button { min-height: 78rpx; }

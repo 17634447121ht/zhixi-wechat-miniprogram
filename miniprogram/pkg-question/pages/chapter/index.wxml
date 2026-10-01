@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="章节加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="notice">选择章节后，还可以精确勾选知识点进行专项练习。</view>
+    <view class="chapter-card" wx:for="{{detail.chapters}}" wx:key="id" data-id="{{item.id}}" bind:tap="openKnowledge">
+      <view class="row--between"><view class="title-md">{{item.name}}</view><view class="caption">{{item.total}} 题 ›</view></view>
+      <view class="body mt-sm">{{item.description}}</view>
+      <view class="mt-md"><progress-bar value="{{item.accuracy}}" label="当前正确率" detail="{{item.accuracy}}%" /></view>
+    </view>
+  </block>
+</view>

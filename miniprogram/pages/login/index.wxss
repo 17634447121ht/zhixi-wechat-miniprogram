@@ -1,0 +1,13 @@
+.login-page { display: flex; min-height: 100vh; flex-direction: column; padding: 150rpx 52rpx calc(42rpx + env(safe-area-inset-bottom)); background: #f7f9f7; text-align: center; }
+.login-main { width: 100%; max-width: 620rpx; margin: 0 auto; }
+.brand-mark { display: flex; align-items: center; justify-content: center; width: 92rpx; height: 92rpx; margin: 0 auto; border-radius: 24rpx; color: #fff; background: #187653; font-family: serif; font-size: 46rpx; font-weight: 800; }
+.title { margin-top: 34rpx; color: #17221c; font-size: 48rpx; font-weight: 800; letter-spacing: 6rpx; }
+.subtitle { margin-top: 12rpx; color: #7d8982; font-size: 24rpx; }
+.login-form { margin-top: 72rpx; text-align: left; }
+.field-label { margin-bottom: 13rpx; color: #45534b; font-size: 23rpx; font-weight: 650; }
+.nickname-input { width: 100%; height: 90rpx; padding: 0 24rpx; border: 1rpx solid #dfe6e2; border-radius: 18rpx; background: #fff; color: #17221c; font-size: 27rpx; }
+.input-placeholder { color: #a2aaa5; }
+.login-button { display: flex; align-items: center; justify-content: center; min-height: 90rpx; margin-top: 24rpx; border-radius: 18rpx; color: #fff; background: #187653; font-size: 28rpx; font-weight: 700; }
+.login-button::after { border: 0; }
+.login-button--loading { opacity: .7; }
+.privacy { margin-top: auto; padding-top: 64rpx; color: #9aa39e; font-size: 20rpx; line-height: 1.55; }

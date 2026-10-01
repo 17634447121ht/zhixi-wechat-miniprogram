@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <view class="test-finish" wx:elif="{{finished}}"><view class="finish-score">{{score}} / {{tests.length}}</view><view class="title-lg mt-md">测试完成</view><view class="body mt-sm">{{score === tests.length ? '全部答对，记忆状态很好。' : '回到学习页，再复习一下没把握的词。'}}</view><view class="button-row mt-lg"><button class="button button--outline" bind:tap="restart">再测一次</button><button class="button button--primary" bind:tap="goHome">返回首页</button></view></view>
+  <block wx:elif="{{current}}">
+    <view class="row--between"><view class="caption">英译中</view><view class="caption">{{index + 1}} / {{tests.length}}</view></view><view class="mt-sm"><progress-bar value="{{(index + 1) / tests.length * 100}}" /></view>
+    <view class="test-card">
+      <view class="prompt">{{current.prompt}}</view><view class="phonetic">{{current.phonetic}}</view><view class="question-hint">请选择最恰当的中文含义</view>
+      <view class="options">
+        <view class="option {{selectedKey === item.key ? 'option--selected' : ''}} {{result && result.correctKey === item.key ? 'option--correct' : ''}} {{result && selectedKey === item.key && !result.correct ? 'option--wrong' : ''}}" wx:for="{{current.options}}" wx:key="key" data-key="{{item.key}}" bind:tap="choose"><view class="key">{{item.key}}</view><view class="grow">{{item.content}}</view></view>
+      </view>
+      <view class="feedback feedback--correct" wx:if="{{result && result.correct}}">回答正确 ✓</view>
+      <view class="feedback feedback--wrong" wx:elif="{{result}}">回答错误，正确答案是 {{result.correctKey}}</view>
+    </view>
+    <view class="fixed-actions"><button wx:if="{{!result}}" class="button button--primary" loading="{{submitting}}" bind:tap="submit">提交答案</button><button wx:else class="button button--primary" bind:tap="next">{{index + 1 >= tests.length ? '查看结果' : '下一题'}}</button></view>
+  </block>
+</view>

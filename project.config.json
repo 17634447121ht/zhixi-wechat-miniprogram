@@ -1,0 +1,18 @@
+{
+  "appid": "wx337466c30c8f039e",
+  "compileType": "miniprogram",
+  "libVersion": "3.7.12",
+  "miniprogramRoot": "miniprogram/",
+  "projectname": "zhixi-study",
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "enhance": true,
+    "minified": true,
+    "postcss": true,
+    "useCompilerPlugins": ["typescript"],
+    "urlCheck": false
+  },
+  "simulatorType": "wechat",
+  "condition": {}
+}

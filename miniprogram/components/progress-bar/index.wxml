@@ -1,0 +1,7 @@
+<view class="progress-head" wx:if="{{label || detail}}">
+  <text class="progress-label">{{label}}</text>
+  <text class="progress-detail">{{detail}}</text>
+</view>
+<view class="track" aria-label="{{label}} {{safeValue}}%">
+  <view class="fill fill--{{tone}}" style="width: {{safeValue}}%;"></view>
+</view>

@@ -1,0 +1,7 @@
+<view class="header">
+  <view class="copy">
+    <view class="title">{{title}}</view>
+    <view class="subtitle" wx:if="{{subtitle}}">{{subtitle}}</view>
+  </view>
+  <view class="action" wx:if="{{actionText}}" bind:tap="onAction">{{actionText}} <text>›</text></view>
+</view>

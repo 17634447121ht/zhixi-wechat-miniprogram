@@ -1,0 +1,32 @@
+<view class="page result-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="报告加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{result}}">
+    <view class="result-hero">
+      <view class="eyebrow result-eyebrow">{{result.mode}}</view>
+      <view class="score-ring"><view class="score">{{result.accuracy}}%</view><view class="score-label">正确率</view></view>
+      <view class="title-lg result-title">{{result.title}}</view>
+      <view class="result-note">{{result.accuracy >= 80 ? '状态很好，保持节奏' : result.accuracy >= 60 ? '基础不错，错题值得再看' : '从错题开始，进步会很具体'}}</view>
+    </view>
+
+    <view class="result-grid">
+      <view class="result-stat"><view class="value">{{result.answered}}</view><view class="caption">已答</view></view>
+      <view class="result-stat"><view class="value success">{{result.correct}}</view><view class="caption">正确</view></view>
+      <view class="result-stat"><view class="value danger">{{result.wrong}}</view><view class="caption">错误</view></view>
+      <view class="result-stat"><view class="value">{{result.durationLabel}}</view><view class="caption">用时</view></view>
+    </view>
+
+    <view class="section" wx:if="{{result.knowledgeStats.length}}">
+      <view class="section-title">知识点分析</view>
+      <view class="card mt-sm bar-list">
+        <progress-bar wx:for="{{result.knowledgeStats}}" wx:key="id" value="{{item.accuracy}}" tone="{{item.accuracy < 60 ? 'red' : 'green'}}" label="{{item.name}}" detail="{{item.correct}} / {{item.total}} · {{item.accuracy}}%" />
+      </view>
+    </view>
+
+    <view class="section button-stack">
+      <button class="button button--primary" bind:tap="viewWrong">查看错题</button>
+      <button class="button button--outline" bind:tap="again">再来一组</button>
+      <button class="button button--ghost" bind:tap="goBank">返回题库</button>
+    </view>
+  </block>
+</view>

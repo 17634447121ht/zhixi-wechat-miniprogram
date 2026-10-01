@@ -1,0 +1,37 @@
+<view class="page practice-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="题目打开失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{view}}">
+    <view class="practice-head">
+      <view class="row--between"><view class="caption">第 {{view.number}} / {{view.total}} 题</view><view class="head-actions"><text bind:tap="toggleFavorite">{{view.question.favorite ? '★ 已收藏' : '☆ 收藏'}}</text><text bind:tap="openCard">题卡</text></view></view>
+      <view class="mt-sm"><progress-bar value="{{view.number / view.total * 100}}" /></view>
+    </view>
+
+    <view class="card question-wrap">
+      <question-card question="{{view.question}}" selected-keys="{{selectedKeys}}" submitted="{{view.submitted}}" result="{{view.result}}" bind:select="select" />
+    </view>
+
+    <view class="answer-panel {{view.result.correct ? 'answer-panel--correct' : 'answer-panel--wrong'}}" wx:if="{{view.submitted && view.result}}">
+      <view class="answer-title">{{view.result.correct ? '回答正确 ✓' : '再想一步 ×'}}</view>
+      <block wx:if="{{analysisVisible}}">
+        <view class="answer-line" wx:if="{{!view.result.correct}}">你的答案：{{view.result.userAnswerText}}</view>
+        <view class="answer-line">正确答案：{{view.result.correctAnswerText}}</view>
+        <view class="divider"></view>
+        <view class="analysis-title">答案解析</view>
+        <view class="analysis">{{view.result.analysis}}</view>
+        <view class="knowledge-row"><text class="tag" wx:for="{{view.result.knowledgePoints}}" wx:key="*this">{{item}}</text></view>
+        <view class="source">来源：{{view.question.source}} · {{view.question.year}}</view>
+      </block>
+      <button wx:else class="button button--ghost reveal-button" bind:tap="revealAnalysis">查看答案与解析</button>
+    </view>
+
+    <view class="fixed-actions">
+      <view class="nav-row">
+        <button class="button button--ghost button--sm {{view.index <= 0 ? 'button--disabled' : ''}}" disabled="{{view.index <= 0}}" bind:tap="previous">上一题</button>
+        <button wx:if="{{!view.submitted}}" class="button button--primary submit-button" loading="{{saving}}" disabled="{{saving}}" bind:tap="submit">{{saving ? '提交中…' : '提交答案'}}</button>
+        <button wx:else class="button button--primary submit-button" bind:tap="next">{{view.index >= view.total - 1 ? '完成练习' : '下一题'}}</button>
+        <button class="button button--ghost button--sm" bind:tap="openCard">题卡</button>
+      </view>
+    </view>
+  </block>
+</view>

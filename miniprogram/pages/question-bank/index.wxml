@@ -1,0 +1,80 @@
+<view class="page">
+  <view class="page-head">
+    <view class="grow">
+      <view class="page-title">题库</view>
+      <view class="page-subtitle">真题与专项分开练</view>
+    </view>
+    <view class="head-action" bind:tap="goImport">导入</view>
+  </view>
+
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <block wx:else>
+    <view class="group-title">真题练习</view>
+    <view class="study-list">
+      <view class="study-row" data-kind="CIVIL_REAL" bind:tap="goImport">
+        <view class="row-symbol row-symbol--real">真</view>
+        <view class="row-main">
+          <view class="row-line">
+            <view class="row-title">考公真题</view>
+            <view class="row-tag">单独题库</view>
+          </view>
+          <view class="row-desc" wx:if="{{overview.civilReal.bankCount}}">{{overview.civilReal.bankCount}} 套 · {{overview.civilReal.questionCount}} 题</view>
+          <view class="row-desc" wx:else>导入国考、省考等历年真题</view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+      <view class="study-row" data-kind="OTHER" bind:tap="goImport">
+        <view class="row-symbol row-symbol--other">其</view>
+        <view class="row-main">
+          <view class="row-title">其他题</view>
+          <view class="row-desc" wx:if="{{overview.other.bankCount}}">{{overview.other.bankCount}} 套 · {{overview.other.questionCount}} 题</view>
+          <view class="row-desc" wx:else>导入考研、课程或自建题目</view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+    </view>
+
+    <view class="group-title">专项题库</view>
+    <view class="study-list">
+      <view
+        wx:for="{{exams}}"
+        wx:key="id"
+        class="study-row"
+        data-id="{{item.id}}"
+        bind:tap="goExam"
+      >
+        <view class="row-symbol row-symbol--{{item.theme}}">{{item.icon}}</view>
+        <view class="row-main">
+          <view class="row-line">
+            <view class="row-title">{{item.shortName}}专项</view>
+            <view class="row-count">{{item.questionCount}} 题</view>
+          </view>
+          <view class="row-desc">{{item.subjectCount}} 个科目 · {{item.description}}</view>
+        </view>
+        <view class="arrow">›</view>
+      </view>
+    </view>
+
+    <view class="group-title">学习工具</view>
+    <view class="mine-list">
+      <view class="mine-row" bind:tap="goWord">
+        <view class="mine-mark mine-mark--word">Aa</view>
+        <view class="mine-title">学单词</view>
+        <view class="mine-desc">词书与复习</view>
+        <view class="arrow">›</view>
+      </view>
+      <view class="mine-row" bind:tap="goWrong">
+        <view class="mine-mark mine-mark--wrong">错</view>
+        <view class="mine-title">错题本</view>
+        <view class="mine-desc">巩固薄弱点</view>
+        <view class="arrow">›</view>
+      </view>
+      <view class="mine-row mine-row--last" bind:tap="goFavorite">
+        <view class="mine-mark mine-mark--favorite">★</view>
+        <view class="mine-title">我的收藏</view>
+        <view class="mine-desc">集中练习</view>
+        <view class="arrow">›</view>
+      </view>
+    </view>
+  </block>
+</view>

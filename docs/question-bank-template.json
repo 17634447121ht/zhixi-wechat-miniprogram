@@ -1,0 +1,53 @@
+{
+  "title": "2025 年某地公务员录用考试行测真题",
+  "year": 2025,
+  "source": "2025 年某地公务员录用考试",
+  "subject": "行政职业能力测验",
+  "questions": [
+    {
+      "type": "SINGLE",
+      "stem": "推进基层治理，既要完善制度，也要在日常服务中体现温度。制度与温度应当彼此____。",
+      "options": {
+        "A": "割裂",
+        "B": "补充",
+        "C": "排斥",
+        "D": "替代"
+      },
+      "answer": "B",
+      "analysis": "制度提供稳定边界，服务温度使制度落实更有温度，二者相互补充。",
+      "chapter": "言语",
+      "knowledgePoints": ["逻辑填空"],
+      "difficulty": 2
+    },
+    {
+      "type": "MULTIPLE",
+      "stem": "下列属于可再生能源的有：",
+      "options": [
+        { "key": "A", "content": "太阳能" },
+        { "key": "B", "content": "风能" },
+        { "key": "C", "content": "煤炭" },
+        { "key": "D", "content": "地热能" }
+      ],
+      "answer": ["A", "B", "D"],
+      "analysis": "太阳能、风能和地热能可以持续补充，煤炭属于不可再生能源。",
+      "chapter": "常识判断",
+      "knowledgePoints": ["科技常识"],
+      "difficulty": 1
+    },
+    {
+      "type": "JUDGE",
+      "stem": "材料显示，该地区本年度公共交通客运量高于上一年度。",
+      "answer": "正确",
+      "analysis": "本年度客运量为 1.26 亿人次，高于上一年度的 1.20 亿人次。",
+      "chapter": "资料分析",
+      "knowledgePoints": ["增长率"],
+      "difficulty": 1,
+      "material": {
+        "title": "某地区公共交通运行情况",
+        "content": "本年度该地区公共交通客运量为 1.26 亿人次，上一年度为 1.20 亿人次。",
+        "source": "2025 年某地公务员录用考试资料",
+        "year": 2025
+      }
+    }
+  ]
+}

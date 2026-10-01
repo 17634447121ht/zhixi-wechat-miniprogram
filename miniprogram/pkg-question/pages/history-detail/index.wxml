@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{error}}" icon="!" title="记录加载失败" description="{{error}}" action-text="返回" bind:action="goBack" />
+  <block wx:elif="{{detail}}">
+    <view class="overview-card">
+      <view class="eyebrow">{{detail.mode}}</view><view class="title-lg mt-sm">{{detail.title}}</view><view class="caption mt-xs">{{detail.date}}</view>
+      <view class="overview-grid"><view><text class="value">{{detail.answered}}</text><text class="label">题</text></view><view><text class="value">{{detail.accuracy}}%</text><text class="label">正确率</text></view><view><text class="value small-value">{{detail.durationLabel}}</text><text class="label">用时</text></view></view>
+    </view>
+    <view class="section-title mt-lg">答题明细</view>
+    <view class="answer-card" wx:for="{{detail.items}}" wx:key="questionId">
+      <view class="number number--{{!item.answered ? 'empty' : item.correct ? 'correct' : 'wrong'}}">{{item.number}}</view>
+      <view class="grow"><view class="stem">{{item.stem}}</view><view class="answer-line">你的答案：<text class="{{item.correct ? 'success-text' : 'wrong-text'}}">{{item.userAnswer}}</text></view><view class="answer-line">正确答案：{{item.correctAnswer}}</view></view>
+    </view>
+  </block>
+</view>

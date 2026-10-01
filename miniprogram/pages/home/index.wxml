@@ -1,0 +1,89 @@
+<view class="page home-page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+
+  <block wx:elif="{{overview}}">
+    <view class="home-head">
+      <view class="grow">
+        <view class="greeting">{{overview.greeting}}，{{overview.user.nickname}}</view>
+        <view class="head-note">今天已学习 {{overview.todayStudyMinutes}} 分钟</view>
+      </view>
+      <view class="streak-chip"><text class="streak-number">{{overview.continuousStudyDays}}</text><text> 天连续</text></view>
+    </view>
+
+    <view class="focus-card" wx:if="{{overview.unfinished}}" bind:tap="resume">
+      <view class="focus-copy">
+        <view class="focus-label">继续学习</view>
+        <view class="focus-title">{{overview.unfinished.title}}</view>
+        <view class="focus-meta">已完成 {{overview.unfinished.current}} / {{overview.unfinished.total}} 题</view>
+      </view>
+      <view class="focus-action">继续</view>
+    </view>
+    <view class="focus-card" wx:else bind:tap="goWord">
+      <view class="focus-copy">
+        <view class="focus-label">今日建议</view>
+        <view class="focus-title">从单词学习开始</view>
+        <view class="focus-meta">完成一小组，保持学习节奏</view>
+      </view>
+      <view class="focus-action">开始</view>
+    </view>
+
+    <view class="section-block">
+      <view class="section-head"><text class="section-name">学习入口</text></view>
+      <view class="quick-grid">
+        <view class="quick-item" bind:tap="goWord">
+          <view class="quick-icon quick-icon--word">Aa</view>
+          <view class="quick-title">学单词</view>
+          <view class="quick-meta">记忆复习</view>
+        </view>
+        <view class="quick-item" data-id="exam-civil" bind:tap="goExam">
+          <view class="quick-icon quick-icon--civil">公</view>
+          <view class="quick-title">考公</view>
+          <view class="quick-meta">行测专项</view>
+        </view>
+        <view class="quick-item" data-id="exam-postgrad" bind:tap="goExam">
+          <view class="quick-icon quick-icon--postgrad">研</view>
+          <view class="quick-title">考研</view>
+          <view class="quick-meta">科目练习</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section-block progress-section">
+      <view class="section-head">
+        <text class="section-name">今日进度</text>
+        <text class="section-link" bind:tap="goSettings">调整目标</text>
+      </view>
+      <view class="progress-card">
+        <progress-bar value="{{overview.wordProgress}}" label="单词" detail="{{overview.todayWordCount}} / {{overview.wordTarget}}" />
+        <view class="progress-gap"></view>
+        <progress-bar value="{{overview.questionProgress}}" tone="orange" label="刷题" detail="{{overview.todayQuestionCount}} / {{overview.questionTarget}}" />
+        <view class="progress-gap"></view>
+        <progress-bar value="{{overview.studyProgress}}" tone="blue" label="时长" detail="{{overview.todayStudyMinutes}} / {{overview.studyTarget}} 分钟" />
+      </view>
+    </view>
+
+    <view class="section-block recent-section">
+      <view class="section-head">
+        <text class="section-name">最近练习</text>
+        <view class="section-actions">
+          <text class="section-link" bind:tap="goHistory">全部记录</text>
+          <text class="action-divider">·</text>
+          <text class="section-link" bind:tap="goStatistics">学习分析</text>
+        </view>
+      </view>
+      <view class="recent-list" wx:if="{{overview.recent.length}}">
+        <block wx:for="{{overview.recent}}" wx:key="id">
+          <view wx:if="{{index === 0 || index === 1}}" class="recent-row" data-id="{{item.id}}" bind:tap="openHistory">
+            <view class="grow">
+              <view class="recent-title">{{item.title}}</view>
+              <view class="recent-meta">{{item.mode}} · {{item.answered}} 题 · {{item.date}}</view>
+            </view>
+            <view class="recent-score">{{item.accuracy}}%</view>
+            <view class="recent-arrow">›</view>
+          </view>
+        </block>
+      </view>
+      <view class="empty-note" wx:else>完成练习后，这里会显示最近记录。</view>
+    </view>
+  </block>
+</view>

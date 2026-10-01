@@ -1,0 +1,13 @@
+<view class="page about-page">
+  <view class="logo">知</view><view class="title-lg mt-md">知习</view><view class="caption mt-xs">综合刷题学习小程序 · V{{version}}</view>
+  <view class="slogan">把每一次练习，变成下一次进步的依据。</view>
+  <view class="menu-list mt-lg">
+    <view class="menu-item" bind:tap="showAgreement"><view class="grow">用户协议</view><view class="menu-arrow">›</view></view>
+    <view class="menu-item" bind:tap="showPrivacy"><view class="grow">隐私政策</view><view class="menu-arrow">›</view></view>
+    <view class="menu-item" bind:tap="feedback"><view class="grow">意见反馈</view><view class="menu-arrow">›</view></view>
+  </view>
+  <view class="notice mt-md">当前为可独立运行的本地演示版；正式上线时需要配置微信 AppID、合法域名与服务端认证。</view>
+  <button class="button button--outline mt-lg" bind:tap="logout">退出登录</button>
+  <button class="reset" bind:tap="reset">重置全部演示数据</button>
+  <view class="copyright">© 2026 知习 · 示例题均为原创或基础知识演示</view>
+</view>

@@ -1,0 +1,11 @@
+.calendar-card { padding: 22rpx 18rpx 26rpx; border: 1rpx solid #e0e8e3; border-radius: 18rpx; background: #fff; }
+.calendar-head { display: flex; align-items: center; justify-content: space-between; padding: 4rpx 8rpx 26rpx; text-align: center; }
+.month-button { width: 64rpx; height: 64rpx; margin: 0; padding: 0; border-radius: 18rpx; color: #187653; background: #edf7f1; font-size: 40rpx; line-height: 60rpx; }
+.month-button::after { border: 0; }
+.weekday-grid, .day-grid { display: grid; grid-template-columns: repeat(7,1fr); }
+.weekday-grid { margin-bottom: 12rpx; color: #8b9690; font-size: 21rpx; text-align: center; }
+.day { position: relative; display: flex; align-items: center; justify-content: center; height: 82rpx; color: #435249; font-size: 24rpx; }
+.day .active-dot { position: absolute; width: 9rpx; height: 9rpx; bottom: 9rpx; border-radius: 50%; background: #187653; }
+.day--active { color: #176c4c; font-weight: 750; }
+.day--today text { display: flex; align-items: center; justify-content: center; width: 52rpx; height: 52rpx; border-radius: 50%; color: #fff; background: #187653; }
+.day--today .active-dot { background: #fff; }

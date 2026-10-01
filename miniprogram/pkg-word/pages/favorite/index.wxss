@@ -1,0 +1,12 @@
+.search { display: grid; grid-template-columns: 1fr 112rpx; gap: 12rpx; }
+.search-input { height: 78rpx; padding: 0 22rpx; border: 1rpx solid #dfe7e2; border-radius: 20rpx; background: #fff; }
+.search-button { height: 78rpx; margin: 0; border-radius: 20rpx; color: #fff; background: #187653; font-size: 24rpx; line-height: 78rpx; }
+.search-button::after { border: 0; }
+.level-scroll { margin: 18rpx 0; white-space: nowrap; }
+.level-row { display: flex; gap: 12rpx; padding-bottom: 8rpx; }
+.word-row { display: flex; align-items: center; gap: 18rpx; margin-bottom: 16rpx; padding: 26rpx; border: 1rpx solid #e1e9e4; border-radius: 24rpx; background: #fff; }
+.word { font-family: Georgia,serif; font-size: 34rpx; font-weight: 750; }
+.phonetic { margin-top: 7rpx; color: #86918b; font-size: 21rpx; }
+.meaning { margin-top: 12rpx; color: #405147; font-size: 25rpx; }
+.remove { min-height: 60rpx; margin: 0; padding: 0 12rpx; color: #b34f4b; background: #fff1f0; border-radius: 16rpx; font-size: 21rpx; line-height: 60rpx; }
+.remove::after { border: 0; }

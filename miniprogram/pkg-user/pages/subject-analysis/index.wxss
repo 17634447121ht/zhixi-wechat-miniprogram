@@ -1,0 +1,2 @@
+.ability-card { margin-top: 14rpx; padding: 22rpx; border: 1rpx solid #e1e9e4; border-radius: 18rpx; background: #fff; }
+.ability-score { color: #187653; font-size: 34rpx; font-weight: 850; }

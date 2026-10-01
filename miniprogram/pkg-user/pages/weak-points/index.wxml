@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="loading" wx:if="{{loading}}"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+  <empty-state wx:elif="{{!items.length}}" icon="◎" title="暂无薄弱点数据" description="完成练习后，系统会根据错误率自动排序。" action-text="去刷题" bind:action="goBank" />
+  <block wx:else>
+    <view class="notice">这里仅做统计展示与专项入口，不会替代你的判断。</view>
+    <view class="weak-card" wx:for="{{items}}" wx:key="knowledgePointId">
+      <view class="row--between"><view><view class="title-md">{{item.knowledgePointName}}</view><view class="caption mt-xs">{{item.subjectName}} · {{item.chapterName}}</view></view><view class="score">{{item.accuracy}}%</view></view>
+      <view class="mt-md"><progress-bar value="{{item.accuracy}}" tone="red" label="已练 {{item.total}} 次" detail="答对 {{item.correct}} 次" /></view>
+      <button class="practice" data-id="{{item.knowledgePointId}}" bind:tap="practice">开始专项练习 ›</button>
+    </view>
+  </block>
+</view>
